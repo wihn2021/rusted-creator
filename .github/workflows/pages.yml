@@ -21,6 +21,12 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm install
+      - run: npm run build
+      - run: cp -rf templates dist
   # Single deploy job since we're just deploying
   deploy:
     environment:
@@ -28,9 +34,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - run: npm install
-      - run: npm run build
-      - run: cp -rf templates dist
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Pages
