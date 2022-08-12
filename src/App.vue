@@ -22,4 +22,14 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+button {
+  border-color: #BCC2D7;
+  color: #EFF1FE;
+  background-color: #194568;
+}
+button:hover {
+  border-color: #EFF1FE;
+  color: #EFF1FE;
+  background-color: #546C8C;
+}
 </style>

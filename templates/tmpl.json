@@ -1308,6 +1308,651 @@
             "value": null
         }
     },
+    "build": {
+        "pos": {
+            "key": "pos",
+            "trans": "排序",
+            "des": "此单位在用户界面中排序，越小越靠上。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "tech": {
+            "key": "tech",
+            "trans": "科技",
+            "des": "没啥用。科技等级。通常只会影响此单位界面中的颜色。默认为1，只能填1、2、3。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "forceNano": {
+            "key": "forceNano",
+            "trans": "建造方式",
+            "des": "如果为true，则将目标当作是建筑物建造。 （即使是一个单位）",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isVisible": {
+            "key": "isVisible",
+            "trans": "隐藏",
+            "des": "如果满足条件，则从界面中隐藏此单位。比如用于科技树。",
+            "type": "LogicBoolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isLockedMessage": {
+            "key": "isLockedMessage",
+            "trans": "锁定原因描述",
+            "des": "告知玩家单位为何被锁定。",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isLockedMessage_{LANG}": {
+            "key": "isLockedMessage_{LANG}",
+            "trans": "锁定文本多语言",
+            "des": "设置锁定文本在不同语言下显示的内容。语言代码点击此处。",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isLockedAlt": {
+            "key": "isLockedAlt",
+            "trans": "更多锁定原因",
+            "des": "另一个被锁定原因。只是允许显示不同的消息。",
+            "type": "LogicBoolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isLockedAltMessage": {
+            "key": "isLockedAltMessage",
+            "trans": "锁定原因描述",
+            "des": "另一个被锁定原因描述。",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isLockedAlt2": {
+            "key": "isLockedAlt2",
+            "trans": "更多锁定原因2",
+            "des": "更多的锁定原因…",
+            "type": "LogicBoolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isLockedAlt2Message": {
+            "key": "isLockedAlt2Message",
+            "trans": "锁定文本2描述",
+            "des": "更多的锁定描述…",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addResources": {
+            "key": "addResources",
+            "trans": "增加资源",
+            "des": "在放置建筑物或生产单位时，将这些资源添加到自身中。",
+            "type": "price(s)",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isGuiBlinking": {
+            "key": "isGuiBlinking",
+            "trans": "界面闪烁",
+            "des": "如果为true，则在UI中生成闪烁效果。",
+            "type": "LogicBoolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        }
+    },
+    "graphics": {
+        "sectionKey": "graphics",
+        "sectionName": "图像",
+        "image": {
+            "key": "image",
+            "trans": "图像",
+            "des": "使用自定义图片。覆盖drawType和frame",
+            "type": "file (image)",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "image_back": {
+            "key": "image_back",
+            "trans": "背景图像",
+            "des": "可选的在单位后面绘制图像，不随单位转动。可用于工厂底图，单位角标等。",
+            "type": "file (image)",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "image_wreak": {
+            "key": "image_wreak",
+            "trans": "死亡图像",
+            "des": "可选的单位死亡时使用的图像。",
+            "type": "file (image)",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "image_shield": {
+            "key": "image_shield",
+            "trans": "护盾图像",
+            "des": "自定义护盾所使用的图像。",
+            "type": "file (image)",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "image_offsetX": {
+            "key": "image_offsetX",
+            "trans": "图像X轴偏移",
+            "des": "图像在X轴偏移，用于不对称图像，比如你的单位有个吊臂，这样中心不在正中间。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "image_offsetY": {
+            "key": "image_offsetY",
+            "trans": "图像Y轴偏移",
+            "des": "图像在Y轴偏移,用于比较高的单位。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isVisible": {
+            "key": "isVisible",
+            "trans": "可见",
+            "des": "默认为true。如果false则从UI中隐藏并被禁用。",
+            "type": "LogicBoolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isVisibleToEnemies": {
+            "key": "isVisibleToEnemies",
+            "trans": "对敌人可见",
+            "des": "与showOnMinimapToEnemies,canOnlyBeAttackedByUnitsWithTags一起使用时，可以创建隐形系统。",
+            "type": "logic",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "teamColorsUseHue": {
+            "key": "teamColorsUseHue",
+            "trans": "阵营色色相",
+            "des": "luke不建议使用。单位上的绿色像素转换为团队颜色。 若为true整个单位都带有团队色彩。 默认为false，挺难看的。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "teamColoringMode": {
+            "key": "teamColoringMode",
+            "trans": "阵营色模式",
+            "des": "设置单位着色逻辑，默认是纯绿。有四个值disabled,hueShift,hueAdd,pureGreen。(禁用，色相偏移，色相添加，纯绿)",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "scaleImagesTo": {
+            "key": "scaleImagesTo",
+            "trans": "缩放图像到",
+            "des": "单位像素。调整图像大小以使其适合像素值。同时影响腿部和阴影图像。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "imageScale": {
+            "key": "imageScale",
+            "trans": "图像缩放比例",
+            "des": "调整图像大小。默认值为1。也可以影响腿部和阴影图像。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "drawLayer": {
+            "key": "drawLayer",
+            "trans": "绘制图层",
+            "des": "陆上单位通常默认为ground或ground2。运输船为ground2。wreaks, underwater, bottom, ground, ground2, experimentals, air, top",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "whenBeingBuiltMakeTransparentTill": {
+            "key": "whenBeingBuiltMakeTransparentTill",
+            "trans": "建造时透明度",
+            "des": "设为0则一开始便完全不透明，设为1则直到建造完成时才不透明。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "icon_zoomed_out": {
+            "key": "icon_zoomed_out",
+            "trans": "缩放图标",
+            "des": "缩放时显示的图标",
+            "type": "file (image)",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "icon_zoomed_out_neverShow": {
+            "key": "icon_zoomed_out_neverShow",
+            "trans": "缩放图标永不显示",
+            "des": "缩放图标永不显示。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "image_turret": {
+            "key": "image_turret",
+            "trans": "炮塔图像",
+            "des": "所有炮塔的默认图像，也可以为每个炮塔设置专用图像。",
+            "type": "file (image)",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "teamColorsOnTurret": {
+            "key": "teamColorsOnTurret",
+            "trans": "炮塔使用队伍色",
+            "des": "默认为false。在转塔上也应用团队颜色。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "scaleTurretImagesTo": {
+            "key": "scaleTurretImagesTo",
+            "trans": "炮塔图像缩放",
+            "des": "单位像素。缩放炮塔图像至指定像素，只用填宽度",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "lock_body_rotation_with_main_turret": {
+            "key": "lock_body_rotation_with_main_turret",
+            "trans": "锁定主体旋转随主炮塔",
+            "des": "锁定主体图像旋转追随主炮塔",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "lock_leg_rotation_with_main_turret": {
+            "key": "lock_leg_rotation_with_main_turret",
+            "trans": "锁定腿脚旋转随主炮塔",
+            "des": "锁定腿脚图像旋转追随主炮塔",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "image_shadow": {
+            "key": "image_shadow",
+            "trans": "阴影图像",
+            "des": "填NONE或AUTO,或图像文件。",
+            "type": "file (image)",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "shadowOffsetX": {
+            "key": "shadowOffsetX",
+            "trans": "阴影图像偏移X轴",
+            "des": "阴影x轴偏移值，正数往右",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "shadowOffsetY": {
+            "key": "shadowOffsetY",
+            "trans": "阴影图像偏移Y轴",
+            "des": "阴影y轴偏移值，正数往下",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "image_shadow_frames": {
+            "key": "image_shadow_frames",
+            "trans": "阴影图像指定",
+            "des": "true时阴影不随单位移动而改变方向。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "lock_shadow_rotation_with_main_turret": {
+            "key": "lock_shadow_rotation_with_main_turret",
+            "trans": "阴影锁定为主炮塔方向",
+            "des": "将身体图像阴影锁定到主炮塔的方向",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "total_frames": {
+            "key": "total_frames",
+            "trans": "动画总帧数",
+            "des": "动画的总帧数，与图像(image)或frameIndex一起使用。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "frame_width": {
+            "key": "frame_width",
+            "trans": "图像宽度",
+            "des": "设置单帧宽度，自动计算并覆盖总帧数。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "frame_height": {
+            "key": "frame_height",
+            "trans": "图像高度",
+            "des": "默认为图像高度",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "splastEffect": {
+            "key": "splastEffect",
+            "trans": "水波效果",
+            "des": "在水上时创建水波效果。默认为false",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "dustEffect": {
+            "key": "dustEffect",
+            "trans": "灰尘效果",
+            "des": "在地面上产生灰尘效果。默认为false",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "splastEffectReverse": {
+            "key": "splastEffectReverse",
+            "trans": "逆向水波效果",
+            "des": "填true时，在倒车时也能产生效果",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "dustEffectReverse": {
+            "key": "dustEffectReverse",
+            "trans": "逆向灰尘效果",
+            "des": "填true时，在倒车时也能产生效果",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "movementEffect": {
+            "key": "movementEffect",
+            "trans": "运动效果",
+            "des": "自定义运动效果，可以是内置的或者自定义的。",
+            "type": "effect",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "movementEffectReverse": {
+            "key": "movementEffectReverse",
+            "trans": "逆向运动效果",
+            "des": "自定义倒车效果。",
+            "type": "effect",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "movementEffectRate": {
+            "key": "movementEffectRate",
+            "trans": "运动效果频率",
+            "des": "自定义效果产生频率，每隔多少帧一次。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "movementEffectReverseFlipEffects": {
+            "key": "movementEffectReverseFlipEffects",
+            "trans": "逆向时反转运动效果",
+            "des": "倒车时反转效果",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "repairEffect": {
+            "key": "repairEffect",
+            "trans": "维修效果",
+            "des": "自定义维修效果，可以是任何东西。替换构建时的默认效果",
+            "type": "effect",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "repairEffectAtTarget": {
+            "key": "repairEffectAtTarget",
+            "trans": "维修目标效果",
+            "des": "维修目标上产生的效果。",
+            "type": "effect",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "repairEffectRate": {
+            "key": "repairEffectRate",
+            "trans": "维修效果频率",
+            "des": "维修效果每隔多少帧产生一次。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "reclaimEffect": {
+            "key": "reclaimEffect",
+            "trans": "回收效果",
+            "des": "自定义回收效果，可以是任何东西。替换回收时的默认效果",
+            "type": "effect",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "reclaimEffectAtTarget": {
+            "key": "reclaimEffectAtTarget",
+            "trans": "回收目标效果",
+            "des": "回收目标上产生的效果。",
+            "type": "effect",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "reclaimEffectRate": {
+            "key": "reclaimEffectRate",
+            "trans": "回收效果频率",
+            "des": "回收效果每隔多少帧产生一次。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "rotate_with_direction": {
+            "key": "rotate_with_direction",
+            "trans": "随角度旋转",
+            "des": "默认为true。设置为false时将单位图像锁定为0度。通常与animation_direction_ *一起用作多向视图。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "animation_direction_units": {
+            "key": "animation_direction_units",
+            "trans": "多向动画度数",
+            "des": "每隔多少度切换一次素材,比如填45代表8个方向，90个代表4个方向的动画。与rotate_with_direction一起使用。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "animation_direction_strideX": {
+            "key": "animation_direction_strideX",
+            "trans": "多向动画x向",
+            "des": "动画帧取值在X方向改变时偏移。一般填0",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "animation_direction_strideY": {
+            "key": "animation_direction_strideY",
+            "trans": "多向动画y向",
+            "des": "动画帧在方向改变Y轴偏移偏移。与frame_height一起使用。一般填1",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "animation_direction_starting": {
+            "key": "animation_direction_starting",
+            "trans": "多向动画朝向",
+            "des": "第一帧的方向，取决于你的素材。你要考虑转向后避免正负数交替现象，否则会导致素材朝向异常。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "disableLowHpFire": {
+            "key": "disableLowHpFire",
+            "trans": "禁用低生命冒火",
+            "des": "禁用低生命值时冒火的视觉效果",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "disableLowHpSmoke": {
+            "key": "disableLowHpSmoke",
+            "trans": "禁用低生命冒烟",
+            "des": "禁用低生命值时冒烟的视觉效果",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "showTransportBar": {
+            "key": "showTransportBar",
+            "trans": "禁用运输条显示",
+            "des": "禁用运输条显示",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "showHealthBar": {
+            "key": "showHealthBar",
+            "trans": "禁用生命条显示",
+            "des": "禁用生命条显示",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "showEnergyBar": {
+            "key": "showEnergyBar",
+            "trans": "禁用能量条显示",
+            "des": "禁用能量条显示",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "animation_TYPE_start": {
+            "key": "animation_TYPE_start",
+            "trans": "动画_类型_开始",
+            "des": "已弃用，请改用[animation]部分",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "animation_TYPE_end": {
+            "key": "animation_TYPE_end",
+            "trans": "动画_类型_结束",
+            "des": "结束帧，必须更大然后开始",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "animation_TYPE_scale_start": {
+            "key": "animation_TYPE_scale_start",
+            "trans": "动画_类型_缩放开始",
+            "des": "比例单位图像。默认值为1。适用于生物单位或呼吸效果。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "animation_TYPE_scale_end": {
+            "key": "animation_TYPE_scale_end",
+            "trans": "动画_类型_缩放结束",
+            "des": "比例单位图像。默认值为1。适用于生物单位或呼吸效果。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "animation_TYPE_speed": {
+            "key": "animation_TYPE_speed",
+            "trans": "动画_类型_速度",
+            "des": "动画每一帧的延迟。较大的值会导致动画变慢",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "animation_TYPE_pingPong": {
+            "key": "animation_TYPE_pingPong",
+            "trans": "动画_类型_膨胀",
+            "des": "重复播放之前，请反向播放动画。与scale_start / scale_end一起使用",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        }
+    },
     "attack": {
         "sectionKey": "attack",
         "sectionName": "攻击",
@@ -2041,6 +2686,890 @@
             "value": null
         }
     },
+    "projectile": {
+        "life": {
+            "key": "life",
+            "trans": "存在时间",
+            "des": "开火后炮弹在没命中时的存活时间，单位为帧。60为1s。多少合适取决于速度与射程。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "deflectionPower": {
+            "key": "deflectionPower",
+            "trans": "激光拦截耗能",
+            "des": "默认值为1。此抛射体被激光防御摧毁所需的能量。 -1为禁止拦截。（对特殊武器如火焰）",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "explodeOnEndOfLife": {
+            "key": "explodeOnEndOfLife",
+            "trans": "寿终爆炸",
+            "des": "默认为false。True则会在寿命终结时爆炸，并产生其命中时该有的效果。而不是直接消失。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "autoTargetingOnDeadTarget": {
+            "key": "autoTargetingOnDeadTarget",
+            "trans": "自动切换目标",
+            "des": "如果目标死亡则自动切换单位。填true时如果有代码\"targetGround:true\"炮弹将会追踪距离它最近的单位。如果没有\"targetGround\"时将会在单位死亡后再改变目标。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "autoTargetingOnDeadTargetRange": {
+            "key": "autoTargetingOnDeadTargetRange",
+            "trans": "自动切换目标检索范围",
+            "des": "当旧目标死亡时选择新目标的范围",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "autoTargetingOnDeadTargetLead": {
+            "key": "autoTargetingOnDeadTargetLead",
+            "trans": "自动切换目标预判",
+            "des": "尝试新的目标时的预判",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "unloadUpToXUnitsFromSource": {
+            "key": "unloadUpToXUnitsFromSource",
+            "trans": "卸载单位至命中地",
+            "des": "将指定个数单位卸载到抛射体爆炸位置。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "teleportSource": {
+            "key": "teleportSource",
+            "trans": "传送",
+            "des": "将单位移动到抛射体爆炸的位置，用于传送自身。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "spawnUnit": {
+            "key": "spawnUnit",
+            "trans": "产生单位",
+            "des": "在弹丸爆炸位置产生这种单位",
+            "type": "unit types",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "convertHitToSourceTeam": {
+            "key": "convertHitToSourceTeam",
+            "trans": "命中时更改所属",
+            "des": "将更改被命中的单位转换队伍为自身所属。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "tags": {
+            "key": "tags",
+            "trans": "标签",
+            "des": "用于抛射体拦截功能。",
+            "type": "tags",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "flameWeapon": {
+            "key": "flameWeapon",
+            "trans": "火焰武器",
+            "des": "命中时产生小火焰（仅用于装饰）",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "spawnProjectilesOnEndOfLife": {
+            "key": "spawnProjectilesOnEndOfLife",
+            "trans": "在寿命结束时刷抛射体",
+            "des": "填抛射体名。在寿命(life)结束时刷抛射体。刷抛射体逻辑具体参数参考后面刷抛射体大项。这简化了过去许多需要多炮塔(如贯穿攻击)或是刷辅助单位才能实现的操作。",
+            "type": "projectile ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "spawnProjectilesOnExplode": {
+            "key": "spawnProjectilesOnExplode",
+            "trans": "在爆炸时刷抛射体",
+            "des": "填抛射体名。只在爆炸时刷抛射体，如果耗光life则不会刷。",
+            "type": "projectile ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "spawnProjectilesOnCreate": {
+            "key": "spawnProjectilesOnCreate",
+            "trans": "在创建时刷抛射体",
+            "des": "填抛射体名。抛射体创建时刷抛射体。",
+            "type": "projectile ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "directDamage": {
+            "key": "directDamage",
+            "trans": "直接伤害",
+            "des": "击中对目标单位造成伤害。不适用于targetGround:true。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "areaDamage": {
+            "key": "areaDamage",
+            "trans": "范围伤害",
+            "des": "范围伤害值，此区域内敌方单位都将受到损伤，默认向边缘递减。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "areaRadius": {
+            "key": "areaRadius",
+            "trans": "范围半径",
+            "des": "范围伤害区域大小，此区域内敌方单位都将受到损伤，默认向边缘递减。数值类型为像素，大小算法为半径，铁锈内地块一格长为20像素。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "areaDamageNoFalloff": {
+            "key": "areaDamageNoFalloff",
+            "trans": "范围伤害不衰减",
+            "des": "默认false.为true时范围伤害不再向边缘递减。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "areaRadiusFromEdge": {
+            "key": "areaRadiusFromEdge",
+            "trans": "范围伤害从边缘计算",
+            "des": "范围伤害将从单位的边缘计算，而不是默认的中心计算。主要用于攻击大型单位。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "areaExpandTime": {
+            "key": "areaExpandTime",
+            "trans": "范围扩展时间",
+            "des": "将区域伤害变为爆炸波向边缘扩散。效果如核弹。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "areaHitAirAndLandAtSameTime": {
+            "key": "areaHitAirAndLandAtSameTime",
+            "trans": "范围武器同时攻击空中和地面",
+            "des": "范围武器将同时打击空中和地面。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "areaHitUnderwaterAlways": {
+            "key": "areaHitUnderwaterAlways",
+            "trans": "范围武器可攻击深海",
+            "des": "范围武器将可以打击深海单位如潜艇。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "areaIgnoreUnitsCloserThan": {
+            "key": "areaIgnoreUnitsCloserThan",
+            "trans": "范围伤害忽略区域",
+            "des": "小于此范围的单位不会受到攻击影响。需要比areaRadius小，否则造不成伤害。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "buildingDamageMultiplier": {
+            "key": "buildingDamageMultiplier",
+            "trans": "建筑伤害乘数",
+            "des": "默认为1。对建筑物伤害乘上此数值，用于伤害修正。比如闪电对建筑物伤害低，火焰对建筑物伤害高。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "shieldDamageMultiplier": {
+            "key": "shieldDamageMultiplier",
+            "trans": "护盾伤害乘数",
+            "des": "默认为1。对护盾伤害乘数。如0对护盾不造成伤害，2对护盾造成双倍伤害",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "shieldDefectionMultiplier": {
+            "key": "shieldDefectionMultiplier",
+            "trans": "护盾阻挡乘数",
+            "des": "护盾阻挡乘数，填0则可无视护盾，同时对单位和盾造成伤害。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "armourIgnoreAmount": {
+            "key": "armourIgnoreAmount",
+            "trans": "无视装甲数量",
+            "des": "无视目标装甲数量并造成伤害。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "friendlyFire": {
+            "key": "friendlyFire",
+            "trans": "友伤",
+            "des": "范围武器有友伤，可以伤害自己单位。铁锈限制不能对盟友有伤害。负数友伤可以用于范围维修，如果修盟友则需要用中立单位实现。参数false true only-ignoreEnemy",
+            "type": "bool/string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "mutatorX_ifUnitWithTags": {
+            "key": "mutatorX_ifUnitWithTags",
+            "trans": "修正需要标签",
+            "des": "伤害修正所需标签，仅对携带标签单位有效。否则为原始伤害。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "mutatorX_ifUnitWithoutTags": {
+            "key": "mutatorX_ifUnitWithoutTags",
+            "trans": "修正除此标签",
+            "des": "伤害修正除此标签外有效。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "mutatorX_directDamageMultiplier": {
+            "key": "mutatorX_directDamageMultiplier",
+            "trans": "修正直接伤害",
+            "des": "伤害修正,直接伤害(directDamage)乘数。比如直接伤害100，这里填2，对目标就造成200伤害。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "mutatorX_areaDamageMultiplier": {
+            "key": "mutatorX_areaDamageMultiplier",
+            "trans": "修正范围伤害",
+            "des": "伤害修正,范围伤害(areaDamage)乘数。比如直接伤害100，这里填2，对目标就造成200伤害。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "mutatorX_changedExplodeEffect": {
+            "key": "mutatorX_changedExplodeEffect",
+            "trans": "修正命中效果",
+            "des": "如果此修正处于有效状态，则更改爆炸效果。",
+            "type": "effect",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "mutatorX_addResourcesDirectHit": {
+            "key": "mutatorX_addResourcesDirectHit",
+            "trans": "修正直接添加资源",
+            "des": "伤害修正,用于直接伤害(directDamage)，给目标添加指定资源。用途如给目标资源后，目标检测自身资源然后禁止移动。",
+            "type": "resource",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "mutatorX_addResourcesAreaHit": {
+            "key": "mutatorX_addResourcesAreaHit",
+            "trans": "修正区域添加资源",
+            "des": "伤害修正,用于范围伤害(areaDamage)，给目标添加指定资源。",
+            "type": "resource",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "targetGround": {
+            "key": "targetGround",
+            "trans": "目标为地面",
+            "des": "抛射体瞄准并攻击目标所在的地面，而不是追踪目标。直接伤害(directDamage)将会失效，需要使用areaDamage和areaRadius。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "targetGround_includeTargetHeight": {
+            "key": "targetGround_includeTargetHeight",
+            "trans": "目标为地面包括目标高度",
+            "des": "区域影响AA武器",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "targetGroundHeightOffset": {
+            "key": "targetGroundHeightOffset",
+            "trans": "目标为地面高度偏移",
+            "des": "在目标上方或下方射击。可能对分裂和落下的炮弹有用。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "speed": {
+            "key": "speed",
+            "trans": "速度",
+            "des": "抛射体飞行速度，单位是每帧飞行像素。铁锈地块1格20像素，填1则每秒飞行3格。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "targetSpeed": {
+            "key": "targetSpeed",
+            "trans": "到达速度",
+            "des": "加速到这个速度",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "targetSpeedAcceleration": {
+            "key": "targetSpeedAcceleration",
+            "trans": "加速度",
+            "des": "加速度，控制targetSpeed的速度提升",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "ballistic": {
+            "key": "ballistic",
+            "trans": "弹道",
+            "des": "弹道导弹效果，使抛射体先飞向空中并向下飞，而不是走直线。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "ballistic_delaymove_height": {
+            "key": "ballistic_delaymove_height",
+            "trans": "弹道垂直飞行高度",
+            "des": "弹道导弹发射初期效果，决定弹道一开始先升高多少，再斜向爬升到最高过度。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "ballistic_height": {
+            "key": "ballistic_height",
+            "trans": "弹道高度",
+            "des": "弹道最终高度。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "targetGroundSpread": {
+            "key": "targetGroundSpread",
+            "trans": "目标为地面散布",
+            "des": "填数值，用于目标为地面时随机造成偏差效果",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "speedSpread": {
+            "key": "speedSpread",
+            "trans": "速度散布",
+            "des": "随机改变炮弹初始速度",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "instant": {
+            "key": "instant",
+            "trans": "瞬间命中",
+            "des": "立即击中目标",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "instantReuseLast": {
+            "key": "instantReuseLast",
+            "trans": "瞬间命中回收最后抛射体",
+            "des": "用于激光和闪电。激光或闪电命中后还会存在一段时间，当此抛射体命中后，清除上一个抛射体效果。使得只有一个抛射体存在。如使用高频射速变成光束武器，而不是瞎眼叠加。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "instantReuseLast_alsoChangeTurretAim": {
+            "key": "instantReuseLast_alsoChangeTurretAim",
+            "trans": "命中回收抛射体且改变瞄准",
+            "des": "使炮塔瞄准受到命中目标扫描效果的影响，对光束武器有用",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "instantReuseLast_keepAreaDamageList": {
+            "key": "instantReuseLast_keepAreaDamageList",
+            "trans": "命中回收抛射体区域伤害列表",
+            "des": "瞬间命中并回收最后的抛射体并且保持区域伤害列表，默认false,保持列表是1.13的正常行为，造成区域伤害不会第二次生效，但不是很有用。只有当你想要旧的行为时才使用这个。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "disableLeadTargeting": {
+            "key": "disableLeadTargeting",
+            "trans": "禁用预判",
+            "des": "瞄准移动目标时，禁用预判计算。默认为false。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "leadTargetingSpeedCalculation": {
+            "key": "leadTargetingSpeedCalculation",
+            "trans": "预判计算",
+            "des": "用于使用targetGround时预判计算。目标计算的预期速度。默认为“targetSpeed”。如果设置则基于speed. ",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "initialUnguidedSpeedHeight": {
+            "key": "initialUnguidedSpeedHeight",
+            "trans": "初始非制导垂直速度",
+            "des": "设置抛射体和地面间的垂直速度，利用gravity制造出平滑的抛物线。比较迷，填1左右，重力可以不填。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "initialUnguidedSpeedX": {
+            "key": "initialUnguidedSpeedX",
+            "trans": "初非导引速度X",
+            "des": "让抛射体以弧线形式移动,负数向左，正数向右。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "initialUnguidedSpeedY": {
+            "key": "initialUnguidedSpeedY",
+            "trans": "初非导引速度Y",
+            "des": "修改抛射体的高度，正数向下，负数向上。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "gravity": {
+            "key": "gravity",
+            "trans": "重力",
+            "des": "控制地面的弹丸的拉力。与initialUnguidedSpeedHeight一起使用。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "wobbleAmplitude": {
+            "key": "wobbleAmplitude",
+            "trans": "摆动幅度",
+            "des": "抛射体飞行中摆动的剧烈程度。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "wobbleFrequency": {
+            "key": "wobbleFrequency",
+            "trans": "摆动频率",
+            "des": "抛射体飞行中摆动的频率。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "pushForce": {
+            "key": "pushForce",
+            "trans": "推动力量",
+            "des": "弹丸所携带的“重量”是多少?质量越大，推力越大。\n1.13实验：抛射体爆炸后可用推动单位，可用于击退。似乎只对携带moveSlidingMode:true单位有效。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "pushVelocity": {
+            "key": "pushVelocity",
+            "trans": "推进速度",
+            "des": "抛射体爆炸后可用推动单位,推力相对于方向的速度，负值拉动目标使鱼叉/拉动攻击",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "moveWithParent": {
+            "key": "moveWithParent",
+            "trans": "随父物体移动",
+            "des": "当父单位移动时也移动抛射体。对光束效果武器很有用。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "sweepOffset": {
+            "key": "sweepOffset",
+            "trans": "扫描偏移",
+            "des": "扫描偏移，用于制作类似于两栖护盾坦克的激光武器。对光束效果很有用。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "sweepSpeed": {
+            "key": "sweepSpeed",
+            "trans": "扫描速度",
+            "des": "扫描速度，用于制作类似于两栖护盾坦克的激光武器。对光束效果很有用。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "sweepOffsetFromTargetRadius": {
+            "key": "sweepOffsetFromTargetRadius",
+            "trans": "扫描偏移目标半径",
+            "des": "以目标半径作为扫描偏移量乘数，用于制作类似于两栖护盾坦克的激光武器。对光束效果很有用。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "retargetingInFlight": {
+            "key": "retargetingInFlight",
+            "trans": "重新瞄准在飞行时",
+            "des": "在飞行过程中重新瞄准一个新的目标，非常适合投掷式武器和相互碰撞的抛射体",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "retargetingInFlightSearchDelay": {
+            "key": "retargetingInFlightSearchDelay",
+            "trans": "重新瞄准在飞行时搜索延迟",
+            "des": "在飞行过程中每隔多久进行一次针对新目标的检索。",
+            "type": "float/time",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "retargetingInFlightSearchRange": {
+            "key": "retargetingInFlightSearchRange",
+            "trans": "重新瞄准在飞行时搜索范围",
+            "des": "在飞行过程中针对新目标的检索范围。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "retargetingInFlightSearchLead": {
+            "key": "retargetingInFlightSearchLead",
+            "trans": "重新瞄准在飞行时预判",
+            "des": "在飞行过程中针对新目标的位置预判乘数。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "retargetingInFlightSearchOnlyTags": {
+            "key": "retargetingInFlightSearchOnlyTags",
+            "trans": "重新瞄准在飞行时针对标签",
+            "des": "只针对具有这些标签的单位进行重定向。",
+            "type": "tag ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "color": {
+            "key": "color",
+            "trans": "颜色",
+            "des": "填16进制颜色值，给图像上叠加颜色。一般建议图像使用灰度图，然后叠加颜色。注意彩色图是无法叠加白色变白的。",
+            "type": "color",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "teamColorRatio": {
+            "key": "teamColorRatio",
+            "trans": "队伍色相",
+            "des": "填0-1在图像上叠加阵营色，1为完全为阵营色。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "teamColorRatio_sourceRatio": {
+            "key": "teamColorRatio_sourceRatio",
+            "trans": "阵营色色相比例",
+            "des": "将团队颜色混合到抛射体颜色中与原色比例，默认为(1-teamColorRatio)",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "invisible": {
+            "key": "invisible",
+            "trans": "隐藏",
+            "des": "隐藏抛射体图像。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "shadowImage": {
+            "key": "shadowImage",
+            "trans": "阴影图像",
+            "des": "使用自定义图片给抛射体加阴影。",
+            "type": "file (image)",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "drawType": {
+            "key": "drawType",
+            "trans": "绘制类型",
+            "des": "使用内置抛射体图像。 0:projectiles.png 1:projectiles_large.png 2:projectiles2.png",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "drawSize": {
+            "key": "drawSize",
+            "trans": "绘制大小",
+            "des": "缩放抛射体大小。默认为1",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "frame": {
+            "key": "frame",
+            "trans": "帧",
+            "des": "使用的内置图像帧，编号从零开始。和drawType结合使用。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "hitSound": {
+            "key": "hitSound",
+            "trans": "打击音效",
+            "des": "启用命中音效，默认true",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "explodeEffect": {
+            "key": "explodeEffect",
+            "trans": "爆炸效果",
+            "des": "抛射体爆炸效果",
+            "type": "effect ref list",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "explodeEffectOnShield": {
+            "key": "explodeEffectOnShield",
+            "trans": "护盾上爆炸效果",
+            "des": "如果目标上有护盾，则使用此效果",
+            "type": "effect ref list",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "drawUnderUnits": {
+            "key": "drawUnderUnits",
+            "trans": "绘制在单位下方",
+            "des": "将此效果绘制在单位下方。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "effectOnCreate": {
+            "key": "effectOnCreate",
+            "trans": "创建时效果",
+            "des": "创建时效果，会追随抛射体。",
+            "type": "effect ref list",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "shouldRevealFog": {
+            "key": "shouldRevealFog",
+            "trans": "揭开迷雾",
+            "des": "抛射体在爆炸时向玩家揭开迷雾。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "alwaysVisibleInFog": {
+            "key": "alwaysVisibleInFog",
+            "trans": "迷雾中显示",
+            "des": "抛射体总是在迷雾中显示。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "nukeWeapon": {
+            "key": "nukeWeapon",
+            "trans": "核武器",
+            "des": "发射时在迷你地图上显示。还有其他一些效果。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "trailEffect": {
+            "key": "trailEffect",
+            "trans": "尾焰",
+            "des": "设置为true时为默认的尾焰。但也可以指向任何自定义效果，或使用内置效果。",
+            "type": "bool/effect",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "trailEffectRate": {
+            "key": "trailEffectRate",
+            "trans": "尾焰频率",
+            "des": "尾焰产生频率，默认为3",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "lightSize": {
+            "key": "lightSize",
+            "trans": "闪光大小",
+            "des": "抛射体光照大小,单位半径是地块格子",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "lightColor": {
+            "key": "lightColor",
+            "trans": "闪光颜色",
+            "des": "抛射体光照颜色,不决定激光颜色，激光由color决定。",
+            "type": "color",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "largeHitEffect": {
+            "key": "largeHitEffect",
+            "trans": "大的打击效果",
+            "des": "为true时会产生大的爆炸效果和声音（仅用于装饰），设为false时会禁用范围武器的冲击波效果。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "lightingEffect": {
+            "key": "lightingEffect",
+            "trans": "闪电效果",
+            "des": "将抛射体图像修改为闪电，一般需要instant(瞬间命中)搭配.",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "laserEffect": {
+            "key": "laserEffect",
+            "trans": "激光效果",
+            "des": "将抛射体图像修改为激光。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "delayedStartTimer": {
+            "key": "delayedStartTimer",
+            "trans": "延迟创建",
+            "des": "等待这么久再播放此动画，单位为帧。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "beamImage": {
+            "key": "beamImage",
+            "trans": "波束图像",
+            "des": "用于激光效果的主体图像，图像会被复制为多份显示。例如可用于做红警中的正弦波状辐射武器。",
+            "type": "file (image)",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "beamImageOffsetRate": {
+            "key": "beamImageOffsetRate",
+            "trans": "波束偏移频率",
+            "des": "波束图像的移动频率。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "beamImageStart": {
+            "key": "beamImageStart",
+            "trans": "波束开始图像",
+            "des": "光束动画开火端效果图像",
+            "type": "file (image)",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "beamImageEnd": {
+            "key": "beamImageEnd",
+            "trans": "波束命中图像",
+            "des": "光束动画命中端效果图像",
+            "type": "file (image)",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        }
+    },
     "movement": {
         "sectionKey": "movement",
         "sectionName": "移动",
@@ -2221,6 +3750,3827 @@
             "trans": "坠毁加速度",
             "des": "单位被摧毁时降落的加速度",
             "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        }
+    },
+    "ai": {
+        "sectionKey": "ai",
+        "sectionName": "AI",
+        "useAsBuilder": {
+            "key": "useAsBuilder",
+            "trans": "用作建造者",
+            "des": "作为建造者。如果单位可以建造或维修建筑物，则设置为true。 默认为[core] isBuilder。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "useAsTransport": {
+            "key": "useAsTransport",
+            "trans": "用作运输",
+            "des": "作为载具。如果单位可以运输单位，则默认为true.如果你的单位可以运输又能攻击，则AI可能囤积起来而不攻击，则需要设置false.",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "useAsAttacker": {
+            "key": "useAsAttacker",
+            "trans": "用作攻击者",
+            "des": "是否作为攻击者。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "useAsHarvester": {
+            "key": "useAsHarvester",
+            "trans": "用作采集",
+            "des": "作为采集者。如果单位可以回收资源，则默认为true",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "disableUse": {
+            "key": "disableUse",
+            "trans": "禁用",
+            "des": "禁止AI建立这个单位或建筑物",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "ai_upgradePriority": {
+            "key": "ai_upgradePriority",
+            "trans": "AI升级优先级",
+            "des": "升级优先级。默认值为0.06。 设置在0-1之间，越高，表示AI更有可能先于其他升级该单位。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "buildPriority": {
+            "key": "buildPriority",
+            "trans": "建造优先级",
+            "des": "建造优先级，填0-1。 越大越AI越可能造。Luke的的第一座土地工厂使用0.8，空中工厂使用0.48，第一炮塔使用0.47。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "noneInBaseExtraPriority": {
+            "key": "noneInBaseExtraPriority",
+            "trans": "基地内没有时优先级",
+            "des": "如果AI基地中不存在此单位，则增加其优先级。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "noneGlobalExtraPriority": {
+            "key": "noneGlobalExtraPriority",
+            "trans": "全图没有时优先级",
+            "des": "如果此单位在地图上的任何位置都不存在，则增加其优先级。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "recommendedInEachBaseNum": {
+            "key": "recommendedInEachBaseNum",
+            "trans": "推荐在每个基地的数量",
+            "des": "推荐在每个基地中的数量。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "recommendedInEachBasePriorityIfUnmet": {
+            "key": "recommendedInEachBasePriorityIfUnmet",
+            "trans": "推荐条件不满足时优先级",
+            "des": "如果未满足，推荐在基地中的优先级。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "upgradedFrom": {
+            "key": "upgradedFrom",
+            "trans": "升级自",
+            "des": "创建到另一个单位的链接，用于保留同一单位已升级和未升级的计数。",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "maxGlobal": {
+            "key": "maxGlobal",
+            "trans": "全图最大数量",
+            "des": "全图最多拥有的数量。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "maxEachBase": {
+            "key": "maxEachBase",
+            "trans": "每个基地最大数量",
+            "des": "每个基地最多拥有的数量。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "notPassivelyTargetedByOtherUnits": {
+            "key": "notPassivelyTargetedByOtherUnits",
+            "trans": "不被动地被其他单位瞄准",
+            "des": "允许更好的墙壁建筑物，默认情况下，这些建筑物不会瞄准目标。用于围墙",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "lowPriorityTargetForOtherUnits": {
+            "key": "lowPriorityTargetForOtherUnits",
+            "trans": "低优先级目标",
+            "des": "其它单位不优先考虑此单位。用于围墙",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "whenUsingAsHarvester_recommendedInEachBase": {
+            "key": "whenUsingAsHarvester_recommendedInEachBase",
+            "trans": "每个基地此采集者数量",
+            "des": "当此单位用作采集者时，每个基地推荐的采集者数量。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "whenUsingAsHarvester_recommendedGlobal": {
+            "key": "whenUsingAsHarvester_recommendedGlobal",
+            "trans": "全地图推荐采集者数量",
+            "des": "当此单位用作采集者时，全图推荐的采集者数量。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "whenUsingAsHarvester_includeOtherHarvesterCounts": {
+            "key": "whenUsingAsHarvester_includeOtherHarvesterCounts",
+            "trans": "是否算在采集者计数中",
+            "des": "当此单位用作采集者时，是否算在其它采集者统计中。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "onlyUseAsHarvester_ifBaseHasUnitTagged": {
+            "key": "onlyUseAsHarvester_ifBaseHasUnitTagged",
+            "trans": "有此标签才作为采集者",
+            "des": "只有当基地有单位标记时才可以作为采集者使用.",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        }
+    },
+    "leg": {
+        "sectionKey": "leg",
+        "sectionName": "脚",
+        "attach_x": {
+            "key": "attach_x",
+            "trans": "x轴链接位置",
+            "des": "在X轴上设置腿部的附着点。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "attach_y": {
+            "key": "attach_y",
+            "trans": "Y轴链接位置",
+            "des": "在Y轴上设置腿部的附着点。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "rotateSpeed": {
+            "key": "rotateSpeed",
+            "trans": "旋转速度",
+            "des": "设置脚旋转速度，非对称情况下很明显。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "endDirOffset": {
+            "key": "endDirOffset",
+            "trans": "末端角度偏移值",
+            "des": "目标脚/末端相对于身体的旋转角度。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "lockMovement": {
+            "key": "lockMovement",
+            "trans": "锁定运动",
+            "des": "禁止使用腿脚，将其锁定到主体。用于将行走单位转换为飞行单。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "heightSpeed": {
+            "key": "heightSpeed",
+            "trans": "高度速度",
+            "des": "移动时脚抬高速度和高度。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "moveSpeed": {
+            "key": "moveSpeed",
+            "trans": "移动速度",
+            "des": "腿脚移动速度。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "moveWarmUp": {
+            "key": "moveWarmUp",
+            "trans": "移动延迟",
+            "des": "腿脚移动延迟",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "holdDisMin": {
+            "key": "holdDisMin",
+            "trans": "最小移动距离",
+            "des": "默认值为7。如果相邻的腿还没有重新移动，则至少移动此距离。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "holdDisMax": {
+            "key": "holdDisMax",
+            "trans": "最大移动距离",
+            "des": "默认值为16。如果已经移动超过此距离则强制重新放置腿。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "holdDisMin_maxMovingLegs": {
+            "key": "holdDisMin_maxMovingLegs",
+            "trans": "最大移动腿数目",
+            "des": "最多移动腿数目",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "hold_moveOnlyIfFurthest": {
+            "key": "hold_moveOnlyIfFurthest",
+            "trans": "只在最远时保持移动",
+            "des": "保持移动仅在最远时候。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "holdDisMin_checkNeighbours": {
+            "key": "holdDisMin_checkNeighbours",
+            "trans": "最小移动距离检查相邻",
+            "des": "移动最小距离时检查相邻的腿脚。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "hardLimit": {
+            "key": "hardLimit",
+            "trans": "硬性限制",
+            "des": "默认值为50。强制腿部不要走的超过此数值。最好不要用到。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "estimatingPositionMultiplier": {
+            "key": "estimatingPositionMultiplier",
+            "trans": "预测位置乘数",
+            "des": "默认值为1。根据单位速度预测单位可用的腿脚放置位置。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "hidden": {
+            "key": "hidden",
+            "trans": "隐藏",
+            "des": "隐藏",
+            "type": "logic boolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "image_end": {
+            "key": "image_end",
+            "trans": "末端图像",
+            "des": "末端图像，相当于脚。",
+            "type": "image",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "image_end_shadow": {
+            "key": "image_end_shadow",
+            "trans": "末端图像阴影",
+            "des": "末端图像阴影。",
+            "type": "image",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "image_end_teamColors": {
+            "key": "image_end_teamColors",
+            "trans": "末端图像着色",
+            "des": "末端图像使用阵营色。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "image_foot": {
+            "key": "image_foot",
+            "trans": "脚图像",
+            "des": "脚图像，与image_end相同",
+            "type": "image",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "image_foot_shadow": {
+            "key": "image_foot_shadow",
+            "trans": "脚图像阴影",
+            "des": "脚图像阴影。",
+            "type": "image",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "image_middle": {
+            "key": "image_middle",
+            "trans": "中部图像",
+            "des": "中部图像，相当于腿。",
+            "type": "image",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "image_leg": {
+            "key": "image_leg",
+            "trans": "腿图像",
+            "des": "腿图像，与image_middle相同",
+            "type": "image",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "draw_foot_on_top": {
+            "key": "draw_foot_on_top",
+            "trans": "绘制脚在顶层",
+            "des": "绘制脚在顶层。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "drawOverBody": {
+            "key": "drawOverBody",
+            "trans": "绘制主体之上",
+            "des": "绘制在主体之上。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "drawUnderAllUnits": {
+            "key": "drawUnderAllUnits",
+            "trans": "绘制所有单位之下",
+            "des": "绘制所有单位之下。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "drawDirOffset": {
+            "key": "drawDirOffset",
+            "trans": "绘制角度偏移",
+            "des": "绘制角度偏移。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "dust_effect": {
+            "key": "dust_effect",
+            "trans": "灰尘效果",
+            "des": "脚落地时产生灰尘。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "spinRate": {
+            "key": "spinRate",
+            "trans": "旋转速度",
+            "des": "使手臂/腿脚一直旋转，像转塔的idleSpin。用处如直升机的螺旋桨。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "favourOppositeSideNeighbours": {
+            "key": "favourOppositeSideNeighbours",
+            "trans": "偏向于临近一侧",
+            "des": "填true时，使得左右的腿脚拉开时间差，这样更好看。否则看起来顺拐。计算相邻的X比接近的Y查10倍时间。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "drawLegWhenZoomedOut": {
+            "key": "drawLegWhenZoomedOut",
+            "trans": "缩小时绘制腿",
+            "des": "在缩小显示倍数(看到东西更多)后绘制腿。False时不绘制。为了提高绘制腿性能，默认值根据单位大小而变化。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "drawFootWhenZoomedOut": {
+            "key": "drawFootWhenZoomedOut",
+            "trans": "缩小时绘制脚",
+            "des": "在缩小显示倍数(看到东西更多)后绘制脚。False时不绘制。为了提高绘制腿性能，默认值根据单位大小而变化。如果单独设置阴影则可能比较怪异。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "resetAngle": {
+            "key": "resetAngle",
+            "trans": "复位角度",
+            "des": "复位角度。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        }
+    },
+    "attachment": {
+        "sectionKey": "attachment",
+        "sectionName": "附属",
+        "x": {
+            "key": "x",
+            "trans": "x",
+            "des": "子单位x轴位置",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "y": {
+            "key": "y",
+            "trans": "y",
+            "des": "子单位Y轴位置",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "height": {
+            "key": "height",
+            "trans": "高度",
+            "des": "子单位高度。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "onCreateSpawnUnitOf": {
+            "key": "onCreateSpawnUnitOf",
+            "trans": "创建时生成单位",
+            "des": "此创造时也产生此子单位。",
+            "type": "units",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "canBeAttackedAndDamaged": {
+            "key": "canBeAttackedAndDamaged",
+            "trans": "可被攻击或损坏",
+            "des": "可以被攻击或受到伤害。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isUnselectable": {
+            "key": "isUnselectable",
+            "trans": "不可选择",
+            "des": "是不可选择的。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "lockLegMovement": {
+            "key": "lockLegMovement",
+            "trans": "锁定腿脚运动",
+            "des": "锁定腿脚防止乱动。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "keepAliveWhenParentDies": {
+            "key": "keepAliveWhenParentDies",
+            "trans": "保持子存活",
+            "des": "当此单位死亡时，子单位保持存活。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "setDrawLayerOnTop": {
+            "key": "setDrawLayerOnTop",
+            "trans": "绘制于顶层",
+            "des": "此子单位绘制于顶层。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "setDrawLayerOnBottom": {
+            "key": "setDrawLayerOnBottom",
+            "trans": "绘制于底层",
+            "des": "此子单位绘制于底层。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addTransportedUnits": {
+            "key": "addTransportedUnits",
+            "trans": "增加被运输单位",
+            "des": "添加到运输单位槽中。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "lockRotation": {
+            "key": "lockRotation",
+            "trans": "锁定旋转",
+            "des": "锁定方向，禁止旋转。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "rotateWithParent": {
+            "key": "rotateWithParent",
+            "trans": "子单位一同旋转",
+            "des": "旋转时子单位是否一同旋转。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "resetRotationWhenNotAttacking": {
+            "key": "resetRotationWhenNotAttacking",
+            "trans": "不攻击时重置角度",
+            "des": "不攻击时恢复到自身默认角度",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "deattachIfWantingToMove": {
+            "key": "deattachIfWantingToMove",
+            "trans": "移动时脱离",
+            "des": "若收到移动命令，子单位将自动分离。这包括来自action的路径点。可以用来制作机场。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "prioritizeParentsMainTarget": {
+            "key": "prioritizeParentsMainTarget",
+            "trans": "优先考虑父单位的主要目标",
+            "des": "子单位优先考虑父单位当前的目标。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "alwaysAllowedToAttackParentsMainTarget": {
+            "key": "alwaysAllowedToAttackParentsMainTarget",
+            "trans": "总是攻击父单位的主要目标",
+            "des": "子单总是跟随攻击父单位的主要目标。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "canAttack": {
+            "key": "canAttack",
+            "trans": "可攻击",
+            "des": "默认值为true。设置为false以阻止子单位自动攻击。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "onParentTeamChangeKeepCurrentTeam": {
+            "key": "onParentTeamChangeKeepCurrentTeam",
+            "trans": "改变队伍时子单位保持原队伍",
+            "des": "默认值为false。如果为true则父单位改变队伍时子单位不改变队伍。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "smoothlyBlendPositionWhenExistingUnitAdded": {
+            "key": "smoothlyBlendPositionWhenExistingUnitAdded",
+            "trans": "补充时平滑移动",
+            "des": "补充所装载单位至槽位时平滑移动。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "keepWaypointsNeedingMovement": {
+            "key": "keepWaypointsNeedingMovement",
+            "trans": "需要移动保持路径点",
+            "des": "",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "showAllActionsFrom": {
+            "key": "showAllActionsFrom",
+            "trans": "显示所有操作来源",
+            "des": "当被选中时，在父单元列表中显示所有附加单位的动作",
+            "type": "logic boolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "createIncompleteIfParentIs": {
+            "key": "createIncompleteIfParentIs",
+            "trans": "创建随父单位",
+            "des": "如果父节单位不完整，则创建子单位不完整",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "redirectDamageToParent": {
+            "key": "redirectDamageToParent",
+            "trans": "重定向伤害到父单位",
+            "des": "将对附属造成的伤害重定向到父单位，而不是伤害子单位自身。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "redirectDamageToParent_shieldOnly": {
+            "key": "redirectDamageToParent_shieldOnly",
+            "trans": "重定向伤害到父单位护盾",
+            "des": "只将对附属造成的伤害重定向到父单位的护盾，而不是伤害子单位自身。如果盾没了那就伤害自身，如模块蜘蛛。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        }
+    },
+    "effect": {
+        "sectionKey": "effect",
+        "sectionName": "效果",
+        "life": {
+            "key": "life",
+            "trans": "效果存在时间",
+            "des": "默认值为200。到时间效果消失。 设置得尽可能低以减少效果开销。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "lifeRandom": {
+            "key": "lifeRandom",
+            "trans": "效果存在时间随机值",
+            "des": "效果存在时间的随机范围。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "alsoEmitEffectsOnDeath": {
+            "key": "alsoEmitEffectsOnDeath",
+            "trans": "死亡时创建效果",
+            "des": "死亡时创建效果",
+            "type": "effect ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "alsoEmitEffects": {
+            "key": "alsoEmitEffects",
+            "trans": "也创造效果",
+            "des": "创建时创建更多效果，对于多效果很有用。 注意：创建的效果上的其他“ alsoEmitEffects”将被忽略，禁止套娃。",
+            "type": "effect ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "ifSpawnFailsEmitEffects": {
+            "key": "ifSpawnFailsEmitEffects",
+            "trans": "如果失败则创建效果",
+            "des": "如果此效果的“spawnChance”失败，则产生这些效果。",
+            "type": "effect ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "alsoPlaySound": {
+            "key": "alsoPlaySound",
+            "trans": "也播放音效",
+            "des": "播放音效，填文件名或内置。",
+            "type": "sound ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "createWhenOffscreen": {
+            "key": "createWhenOffscreen",
+            "trans": "可创建于画面之外",
+            "des": "允许在画面之外产生此效果，默认为false。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "createWhenZoomedOut": {
+            "key": "createWhenZoomedOut",
+            "trans": "缩小时可产生效果",
+            "des": "允许缩小时产生此效果，默认值为true",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "createWhenOverLiquid": {
+            "key": "createWhenOverLiquid",
+            "trans": "创建于液体上",
+            "des": "允许在液体上方产生此效果，默认值为true",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "createWhenOverLand": {
+            "key": "createWhenOverLand",
+            "trans": "创建于陆地上",
+            "des": "允许在陆地上方产生此效果，默认值为true",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "spawnChance": {
+            "key": "spawnChance",
+            "trans": "产生机会",
+            "des": "抛射体产生几率，默认为1",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "showInFog": {
+            "key": "showInFog",
+            "trans": "在雾中显示",
+            "des": "默认为false",
+            "type": "boolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "delayedStartTimerRandom": {
+            "key": "delayedStartTimerRandom",
+            "trans": "延迟创建随机时间",
+            "des": "等待时间随机变化",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "liveAfterAttachedDies": {
+            "key": "liveAfterAttachedDies",
+            "trans": "目标死后存活",
+            "des": "目标死后动画继续存活,使用AttachedToUnit时默认为false.",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "priority": {
+            "key": "priority",
+            "trans": "优先级",
+            "des": "如果多个mod单元中定义了同名的资源，则使用具有最高优先级的displayName/displayColor",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "attachedToUnit": {
+            "key": "attachedToUnit",
+            "trans": "附着在单位上",
+            "des": "此效果产生时吸附到目标单位或抛射体。将与之一起移动。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "alwayStartDirAtZero": {
+            "key": "alwayStartDirAtZero",
+            "trans": "朝向总是零度",
+            "des": "刷出的单位朝向总是设置为零度。即朝右。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "atmospheric": {
+            "key": "atmospheric",
+            "trans": "空气效果",
+            "des": "添加阻力使此效果减慢速度，并添加随机移动。用于模拟尾焰。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "physics": {
+            "key": "physics",
+            "trans": "物理效果",
+            "des": "撞击地面时反弹。需要高度才能生效。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "physicsGravity": {
+            "key": "physicsGravity",
+            "trans": "物理重力",
+            "des": "默认为1。physics:true时的垂直方向加速度。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "xOffsetRelative": {
+            "key": "xOffsetRelative",
+            "trans": "x相对偏移",
+            "des": "刷出的抛射体的x轴的相对偏移量",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "yOffsetRelative": {
+            "key": "yOffsetRelative",
+            "trans": "y相对偏移",
+            "des": "刷出的抛射体的y轴的相对偏移量",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "xOffsetRelativeRandom": {
+            "key": "xOffsetRelativeRandom",
+            "trans": "X相对随机偏移量",
+            "des": "X相对目标随机偏移量。随机增加或减少此值，用于偏移像素。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "yOffsetRelativeRandom": {
+            "key": "yOffsetRelativeRandom",
+            "trans": "Y相对随机偏移量",
+            "des": "Y相对目标随机偏移量。随机增加或减少此值，用于偏移像素。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "xOffsetAbsolute": {
+            "key": "xOffsetAbsolute",
+            "trans": "X绝对偏移量",
+            "des": "Absolute类为绝对偏移，它不像Relative那样考虑单位的方向。比如设置x向速度为1，绝对偏移则始终向右移动，相对偏移可以向任意方向移动。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "yOffsetAbsolute": {
+            "key": "yOffsetAbsolute",
+            "trans": "Y绝对偏移量",
+            "des": "按位置偏移起动效果，忽略附加炮塔单位等的方向。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "xOffsetAbsoluteRandom": {
+            "key": "xOffsetAbsoluteRandom",
+            "trans": "X绝对随机偏移量",
+            "des": "随机增加或减少此值，用于偏移像素。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "yOffsetAbsoluteRandom": {
+            "key": "yOffsetAbsoluteRandom",
+            "trans": "Y绝对随机偏移量",
+            "des": "随机增加或减少此值，用于偏移像素。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "xSpeedRelative": {
+            "key": "xSpeedRelative",
+            "trans": "X相对速度",
+            "des": "X轴相对于目标的移动速度。，正数向右，负数向左。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "ySpeedRelative": {
+            "key": "ySpeedRelative",
+            "trans": "Y相对速度",
+            "des": "Y轴相对于目标的移动速度。正数向前，负数向后。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "xSpeedRelativeRandom": {
+            "key": "xSpeedRelativeRandom",
+            "trans": "X随机相对速度",
+            "des": "随机增加或减少此值，用于偏移像素。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "ySpeedRelativeRandom": {
+            "key": "ySpeedRelativeRandom",
+            "trans": "Y随机相对速度",
+            "des": "随机增加或减少此值，用于偏移像素。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "xSpeedAbsolute": {
+            "key": "xSpeedAbsolute",
+            "trans": "X绝对速度",
+            "des": "X轴相对于起点的绝对移动速度。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "ySpeedAbsolute": {
+            "key": "ySpeedAbsolute",
+            "trans": "Y绝对速度",
+            "des": "Y轴相对于起点的绝对移动速度。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "xSpeedAbsoluteRandom": {
+            "key": "xSpeedAbsoluteRandom",
+            "trans": "X随机绝对速度",
+            "des": "按此值随机更改初始值。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "ySpeedAbsoluteRandom": {
+            "key": "ySpeedAbsoluteRandom",
+            "trans": "Y随机绝对速度",
+            "des": "按此值随机更改初始值。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "hOffset": {
+            "key": "hOffset",
+            "trans": "高度偏移",
+            "des": "距目标的高度偏移。正数向上，负数向下。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "hOffsetRandom": {
+            "key": "hOffsetRandom",
+            "trans": "随机高度偏移",
+            "des": "按此值随机更改初始值。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "hSpeed": {
+            "key": "hSpeed",
+            "trans": "高度速度",
+            "des": "高度移动速度。正数向上，负数向下。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "hSpeedRandom": {
+            "key": "hSpeedRandom",
+            "trans": "随机高度速度偏移",
+            "des": "按此值随机更改初始值。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "dirOffset": {
+            "key": "dirOffset",
+            "trans": "角度偏移",
+            "des": "角度偏移，修改初始朝向。注意,0度可能存在朝向问题。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "dirOffsetRandom": {
+            "key": "dirOffsetRandom",
+            "trans": "随机角度偏移量",
+            "des": "按此值随机更改偏移角度。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "dirSpeed": {
+            "key": "dirSpeed",
+            "trans": "转速",
+            "des": "修改效果的旋转速度。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "dirSpeedRandom": {
+            "key": "dirSpeedRandom",
+            "trans": "随机转速",
+            "des": "按此值随机更改旋转速度。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "frameIndex": {
+            "key": "frameIndex",
+            "trans": "帧索引",
+            "des": "使用内置效果时所取用的帧编号，0取第一帧。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "frameIndexRandom": {
+            "key": "frameIndexRandom",
+            "trans": "帧随机",
+            "des": "随机增减索引值，用于随机使用同组内不同的图像。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "stripIndex": {
+            "key": "stripIndex",
+            "trans": "图像集",
+            "des": "要使用的内置图像集。不能与自定义图像一起使用。如effects 效果1对应res内文件effects.png，以此类推。\nexplode_big爆炸效果图、light_50闪光贴图、flame开火图火焰、dust灰尘贴图、smoke_black黑烟、shockwave冲击波、fire火焰图、lava_bubble岩浆泡、effects2效果2、plasma_shot等离子、shockwave_large大冲击波、explode_bits碎片、explode_big2大爆炸、explode_bits_bug虫碎片、projectiles抛射体、projectiles2抛射体2、effects3效果3",
+            "type": "int/string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "Image": {
+            "key": "Image",
+            "trans": "图像",
+            "des": "要使用的自定义图像文件。不能与stripIndex一起使用。",
+            "type": "image",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "imageShadow": {
+            "key": "imageShadow",
+            "trans": "阴影图像",
+            "des": "用于自定义阴影的图像",
+            "type": "image",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "scaleTo": {
+            "key": "scaleTo",
+            "trans": "结束缩放倍数",
+            "des": "效果结束时缩放倍数。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "scaleFrom": {
+            "key": "scaleFrom",
+            "trans": "初始缩放倍数",
+            "des": "效果初始时缩放倍数，用于效果从小到大缩放，或者反向缩放。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "fadeInTime": {
+            "key": "fadeInTime",
+            "trans": "淡入时间",
+            "des": "设置淡入效果时间，从透明到不透明。透明度值从0%到100%。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "fadeOut": {
+            "key": "fadeOut",
+            "trans": "淡出",
+            "des": "设置淡入效果时间，透明度从100%淡出到%0。把alpha设置为高于1可以延长淡出。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "alpha": {
+            "key": "alpha",
+            "trans": "透明度",
+            "des": "介于0-1之间。可以设置为大于1以延迟淡出效果",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "shadow": {
+            "key": "shadow",
+            "trans": "阴影",
+            "des": "true时绘制阴影。如果使用imageShadow则强制为true",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "animateFrameStart": {
+            "key": "animateFrameStart",
+            "trans": "动画开始帧",
+            "des": "动画从哪一帧开始,第一帧编号为0",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "animateFrameEnd": {
+            "key": "animateFrameEnd",
+            "trans": "动画结束帧",
+            "des": "动画在哪一帧结束。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "animateFramePingPong": {
+            "key": "animateFramePingPong",
+            "trans": "动画帧重放",
+            "des": "动画正序播放完毕后再倒序播放一次。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "animateFrameSpeed": {
+            "key": "animateFrameSpeed",
+            "trans": "动画帧速度",
+            "des": "动画播放速度，单位位游戏帧，一般动画帧数也不高，所以设置一般为0.x",
+            "type": "time",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "animateFrameSpeedRandom": {
+            "key": "animateFrameSpeedRandom",
+            "trans": "动画帧随机速度",
+            "des": "按此值随机更改动画速度。",
+            "type": "time",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        }
+    },
+    "animation": {
+        "sectionKey": "animation",
+        "sectionName": "动画",
+        "onActions": {
+            "key": "onActions",
+            "trans": "动画条件",
+            "des": "动画触发条件：移动、攻击、闲置、在建造中、建造中并将动画拉伸至建造时长、生产中、未知\nmove, attack, idle, underConstruction, underConstructionWithLinkedBuiltTime, queuedUnits、Unknown",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "onActionsQueuedUnitPlayAt": {
+            "key": "onActionsQueuedUnitPlayAt",
+            "trans": "在队列中有单位播放",
+            "des": "当使用onAction:queueedUnits时，动画开始之前需要达到值，设置为0-1之间",
+            "type": " float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "blendIn": {
+            "key": "blendIn",
+            "trans": "融入时间",
+            "des": "与上一个动画融合时间。",
+            "type": "time",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "blendOut": {
+            "key": "blendOut",
+            "trans": "切换融合",
+            "des": "与下一个动画融合时间。",
+            "type": "time",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "pingPong": {
+            "key": "pingPong",
+            "trans": "缩放效果",
+            "des": "结束后反向播放动画，它一般用来做生物的呼吸效果。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "KeyframeTimeScale": {
+            "key": "KeyframeTimeScale",
+            "trans": "帧时长缩放",
+            "des": "缩放所有关键帧时间，这有助于在不更改所有内容的情况下更快/更慢地制作动画",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "body_[time]": {
+            "key": "body_[time]",
+            "trans": "主体关键帧",
+            "des": "随时为主体添加关键帧。身体仅允许使用frame和scale",
+            "type": "list",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "effect_[time]": {
+            "key": "effect_[time]",
+            "trans": "效果关键帧",
+            "des": "在播放动画时产生效果",
+            "type": "list",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "direction_units": {
+            "key": "direction_units",
+            "trans": "多向动画度数",
+            "des": "播放此动画时，覆盖[graphics] animation_direction_units。多向动画度数\t45个代表8个方向，90个代表4个方向的动画。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "direction_strideX": {
+            "key": "direction_strideX",
+            "trans": "多向动画x向",
+            "des": "覆盖[graphics] animation_direction_strideX，动画帧取值在方向改变时偏移。一般填0",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "direction_strideY": {
+            "key": "direction_strideY",
+            "trans": "多向动画y向",
+            "des": "覆盖[graphics] animation_direction_strideY，动画帧在方向改变Y轴偏移偏移。与frame_height一起使用。一般填1",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "direction_starting": {
+            "key": "direction_starting",
+            "trans": "多向动画朝向",
+            "des": "覆盖[graphics] animation_direction_starting，第一帧的方向，取决于你的素材。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "start : int": {
+            "key": "start : int",
+            "trans": "开始",
+            "des": "开始图像框。不推荐使用，用于类似此形式的动画。animation_TYPE_pingPong",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "end : int": {
+            "key": "end : int",
+            "trans": "结束",
+            "des": "结束图像帧。不推荐使用",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "scale_start : float": {
+            "key": "scale_start : float",
+            "trans": "缩放开始",
+            "des": "开始规模。不推荐使用，而是使用主体关键帧。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "scale_end : float": {
+            "key": "scale_end : float",
+            "trans": "缩放结束",
+            "des": "最终规模。不推荐使用，而是使用主体关键帧。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "speed : float": {
+            "key": "speed : float",
+            "trans": "速度",
+            "des": "速度越小越快。仅效果开始，结束，scale_start，scale_end",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        }
+    },
+    "action": {
+        "sectionKey": "action",
+        "sectionName": "动作",
+        "text": {
+            "key": "text",
+            "trans": "文本",
+            "des": "界面中显示的文字",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "textPostFix: ": {
+            "key": "textPostFix: ",
+            "trans": "文本动态更改",
+            "des": "显示为后缀的文本，与textAddUnitName一起用于创建文本UI",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "text_{LANG}": {
+            "key": "text_{LANG}",
+            "trans": "文字多语言",
+            "des": "界面中显示的文字，多语言",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "description": {
+            "key": "description",
+            "trans": "描述",
+            "des": "选中时显示的文本，用于解释其用途。",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "displayType": {
+            "key": "displayType",
+            "trans": "显示类型",
+            "des": "行动的显示类型正常模式为none，无(绿色)、集结(白色R)、升级(蓝色U)、单位队列（绿色）、建筑(绿色)、行为(蓝色)、仅信息(灰色)、无框信息\nnone, rally, upgrade, queueUnit, building, action, infoOnly, infoOnlyNoBox",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "displayRemainingStockpile": {
+            "key": "displayRemainingStockpile",
+            "trans": "显示剩余库存",
+            "des": "显示剩余库存,显示为根据资源计算可以触发操作的次数。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "pos": {
+            "key": "pos",
+            "trans": "位置",
+            "des": "此动作在用户界面排序。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "iconImage": {
+            "key": "iconImage",
+            "trans": "图标",
+            "des": "使用图像作为此动作图标。",
+            "type": "image",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "iconExtraImage": {
+            "key": "iconExtraImage",
+            "trans": "额外图标图像",
+            "des": "使用图像作为此动作图标。和上一个一致,但显示更靠上。",
+            "type": "image",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "iconExtraColor": {
+            "key": "iconExtraColor",
+            "trans": "额外图标颜色",
+            "des": "将图标叠加上额外的颜色。",
+            "type": "color",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "iconExtraIsVisible": {
+            "key": "iconExtraIsVisible",
+            "trans": "额外图标显示条件",
+            "des": "设置图标什么时候可显示。",
+            "type": "logic boolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "unitShownInUI": {
+            "key": "unitShownInUI",
+            "trans": "UI中显示的单位",
+            "des": "使用此单位作为动作图标。",
+            "type": "UnitType",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "setBuilt": {
+            "key": "setBuilt",
+            "trans": "float",
+            "des": "指定如何从0-100%的百分数和0-1之间的数字构建单元。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "textAddUnitName": {
+            "key": "textAddUnitName",
+            "trans": "从单元添加名称",
+            "des": "从指定单位添加名称。",
+            "type": "unitRef/unitType",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "descriptionAddFromUnit": {
+            "key": "descriptionAddFromUnit",
+            "trans": "从单元添加描述",
+            "des": "从指定单位添加单位描述。",
+            "type": "unitRef/unitType",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "descriptionAddUnitStats": {
+            "key": "descriptionAddUnitStats",
+            "trans": "从单元添加属性",
+            "des": "从指定单位添加详细信息描述，比如攻击力，攻击范围。",
+            "type": "unitRef/unitType",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "unitShownInUIWithHpBar": {
+            "key": "unitShownInUIWithHpBar",
+            "trans": "单元在UI显示Hp条",
+            "des": "在ui中显示单位血条。默认true,仅当unitShownInUI是unitRef时使用",
+            "type": "unitRef/unitType",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "unitShownInUIWithProgressBar": {
+            "key": "unitShownInUIWithProgressBar",
+            "trans": "单元在UI显示进度条",
+            "des": "在ui中显示单位进度条。默认true,仅当unitShownInUI是unitRef时使用。如果激活，则替换HP bar",
+            "type": "unitRef/unitType",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "guiBuildUnit": {
+            "key": "guiBuildUnit",
+            "trans": "应该无效",
+            "des": "",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "price": {
+            "key": "price",
+            "trans": "价格",
+            "des": "此行为需要的价格，可以是多种资源或自定义资源。如果不满足则行为不可用。如果没设定资源类型则默认为资金。如果价格为0，AI可能很少甚至不会使用。",
+            "type": "resources",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isActive": {
+            "key": "isActive",
+            "trans": "可用",
+            "des": "默认为true。如果为false，则会禁用操作，并在用户界面中以红色显示。",
+            "type": "LogicBoolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isLocked": {
+            "key": "isLocked",
+            "trans": "锁定",
+            "des": "默认为false。如果true则禁用操作，则会显示一个锁定文本。可用作禁核或者科技树，或是条件限制。",
+            "type": "LogicBoolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isLockedMessage": {
+            "key": "isLockedMessage",
+            "trans": "锁定消息",
+            "des": "显示锁定的原因。",
+            "type": "LocaleString",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isLockedAlt": {
+            "key": "isLockedAlt",
+            "trans": "更多锁定",
+            "des": "另一个原因被锁定。用于显示不同的消息。",
+            "type": "LogicBoolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isLockedAltMessage": {
+            "key": "isLockedAltMessage",
+            "trans": "更多锁定消息",
+            "des": "显示更多锁定的原因。",
+            "type": "LocaleString",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isLockedAlt2": {
+            "key": "isLockedAlt2",
+            "trans": "更多锁定2",
+            "des": "另一个原因被锁定。用于显示更多锁定的原因。",
+            "type": "LogicBoolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isLockedAlt2Message": {
+            "key": "isLockedAlt2Message",
+            "trans": "更多锁定消息2",
+            "des": "显示更多锁定的原因。",
+            "type": "LocaleString",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "allowMultipleInQueue": {
+            "key": "allowMultipleInQueue",
+            "trans": "允许多个队列",
+            "des": "允许多次点击此行为形成队列，false时则只能点一次，不能累加。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "onlyOneUnitAtATime": {
+            "key": "onlyOneUnitAtATime",
+            "trans": "一次只有一个单位",
+            "des": "填true时选中多个同类单位时，只有一个执行此行为。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isGuiBlinking": {
+            "key": "isGuiBlinking",
+            "trans": "界面闪烁",
+            "des": "此行为在界面中闪烁。",
+            "type": "LogicBoolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "alwaysSinglePress": {
+            "key": "alwaysSinglePress",
+            "trans": "总是按一次",
+            "des": "点击就执行，不需要确认。默认false,不需要在手机上确认，使用canPlayerCancel: false和allowMultipleInQueue: false也隐藏队列接口。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isAlsoViewableByAllies": {
+            "key": "isAlsoViewableByAllies",
+            "trans": "显示给盟友",
+            "des": "允许盟友玩家看到这个单位的动作，对显示其他玩家有用(例如导弹数量，收集的物品)",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "isAlsoViewableByEnemies": {
+            "key": "isAlsoViewableByEnemies",
+            "trans": "显示给敌人",
+            "des": "允许敌方玩家看到这个单位的动作，对显示其他玩家有用(例如导弹数量，收集的物品)",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "ai_isDisabled": {
+            "key": "ai_isDisabled",
+            "trans": "AI被禁用",
+            "des": "默认为false。使用此操作停止AI使用此动作。",
+            "type": "LogicBoolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "ai_isHighPriority": {
+            "key": "ai_isHighPriority",
+            "trans": "AI高优先级",
+            "des": "AI将优先执行此动作。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "ai_considerSameAsBuilding": {
+            "key": "ai_considerSameAsBuilding",
+            "trans": "AI作为建筑",
+            "des": "填建筑。考虑动作的优先级将会跟建筑物建优先级一样。",
+            "type": "building",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "autoTriggerOnEvent": {
+            "key": "autoTriggerOnEvent",
+            "trans": "自动触发事件",
+            "des": "满足此条件则自动触发。参数表：\n创建，完成且激活，销毁，杀死任何单位，队列中单位完成，队列添加项目，队列项目取消，传送，接触目标成功，玩家指定路径，队伍变更，运输新单位，卸载或移除单位\ncreated, completeAndActive, destroyed, killedAnyUnit, queuedUnitFinished, queueItemAdded, queueItemCancelled, teleported, touchTargetSuccess, newWaypointGivenByPlayer, teamChanged, transportingNewUnit，transportUnloadedOrRemovedUnit，",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "autoTrigger": {
+            "key": "autoTrigger",
+            "trans": "自动触发",
+            "des": "如果为true，则立即触发此操作的效果（忽略价格，isActive，isVisible，buildSpeed等）",
+            "type": "LogicBoolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "buildSpeed": {
+            "key": "buildSpeed",
+            "trans": "建造速度",
+            "des": "建造此动作所需要的时间，这个读条过程下面称之为准备以区分建造，机翻或是多个动作称之为队列。完成时的效果称为结果。",
+            "type": "time",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "highPriorityQueue": {
+            "key": "highPriorityQueue",
+            "trans": "高优先级队列",
+            "des": "默认为false。如果为true，则此操作将跳过队列中的所有其他低优先级操作。适用于fireTurret类动作。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "canPlayerCancel": {
+            "key": "canPlayerCancel",
+            "trans": "玩家可以取消",
+            "des": "玩家可以取消此动作。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "whenBuilding_cannotMove": {
+            "key": "whenBuilding_cannotMove",
+            "trans": "建造时无法移动",
+            "des": "执行操作准备时停止单位移动。适用于类似部署类动作。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "whenBuilding_playAnimation": {
+            "key": "whenBuilding_playAnimation",
+            "trans": "建造时播放动画",
+            "des": "准备此动作时，播放[animation]中自定义的动画。",
+            "type": "animation ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "whenBuilding_rotateTo": {
+            "key": "whenBuilding_rotateTo",
+            "trans": "建造时旋转",
+            "des": "准备此动作时，将单位主体旋转到该方向",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "whenBuilding_rotateTo_orBackwards": {
+            "key": "whenBuilding_rotateTo_orBackwards",
+            "trans": "建造时旋转或反转",
+            "des": "如果为true，则当角度较小时，允许从whenBuilding_rotateTo旋转180度。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "whenBuilding_rotateTo_waitTillRotated": {
+            "key": "whenBuilding_rotateTo_waitTillRotated",
+            "trans": "建造时需等待旋转完成",
+            "des": "暂停准备的行为，直到旋转完成再继续。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "whenBuilding_temporarilyConvertTo": {
+            "key": "whenBuilding_temporarilyConvertTo",
+            "trans": "建造时临时转换为",
+            "des": "准备此操作时临时转换为另一个单位。原始单位的操作将保留。",
+            "type": "unit ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "whenBuilding_triggerAction": {
+            "key": "whenBuilding_triggerAction",
+            "trans": "建造时触发动作",
+            "des": "准备时触发另一个动作",
+            "type": "action",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "whenBuilding_rotateTo_aimAtActionTarget": {
+            "key": "whenBuilding_rotateTo_aimAtActionTarget",
+            "trans": "建造时转向瞄准目标",
+            "des": "luke:测试版注意:在某些情况下是坏的",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "whenBuilding_rotateTo_rotateTurretX": {
+            "key": "whenBuilding_rotateTo_rotateTurretX",
+            "trans": "建造时转向指定炮塔",
+            "des": "",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "spawnEffectsOnQueue": {
+            "key": "spawnEffectsOnQueue",
+            "trans": "队列产生效果",
+            "des": "动作准备开始时产生的效果。",
+            "type": "effect ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "playSoundToPlayerOnQueue": {
+            "key": "playSoundToPlayerOnQueue",
+            "trans": "队列播放声音",
+            "des": "动作准备时播放给玩家的声音。",
+            "type": "sound ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "requireConditional": {
+            "key": "requireConditional",
+            "trans": "需要条件",
+            "des": "如果结果为false，则跳过此操作所有结果。",
+            "type": "LogicBoolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "convertTo": {
+            "key": "convertTo",
+            "trans": "转换成",
+            "des": "将你的单位转换为另一个单位。许多属性被保留。",
+            "type": "unit ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "convertTo_keepCurrentTags": {
+            "key": "convertTo_keepCurrentTags",
+            "trans": "转换时保留标签",
+            "des": "将单位转换为另一个单位。并且保留拥有的标签。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addEnergy": {
+            "key": "addEnergy",
+            "trans": "增加能量",
+            "des": "为单位增加能量。需要设置了energyMax，否则不起作用。（与addResources相同：energy = X）",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addResources": {
+            "key": "addResources",
+            "trans": "增加资源",
+            "des": "给生成单位这些资源，可用于设置触发动作的标志",
+            "type": "customResource",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addResourcesScaledByAIHandicaps": {
+            "key": "addResourcesScaledByAIHandicaps",
+            "trans": "根据AI难度添加资源。",
+            "des": "与addResources类似，但根据AI难度级别增加或减少。比例：最简单40%、简单70%、中等100%、困难140%、很困难180%、不可能370%",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "deleteSelf": {
+            "key": "deleteSelf",
+            "trans": "删除自我",
+            "des": "删除此单位，没有死亡效果，不执行死亡触发。",
+            "type": "LogicBoolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "resetCustomTimer": {
+            "key": "resetCustomTimer",
+            "trans": "重置自定义计时器",
+            "des": "重置自定义计时器，与self.customTimer()",
+            "type": "LogicBoolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "setBodyRotation": {
+            "key": "setBodyRotation",
+            "trans": "设置身体旋转",
+            "des": "设置单位旋转度数。单位朝右为0度。因为是结果而不是准备过程，所以很突然。",
+            "type": "dir",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "alsoTriggerAction": {
+            "key": "alsoTriggerAction",
+            "trans": "也执行动作",
+            "des": "触发其他动作的结果。忽略行动的要求。",
+            "type": "action refs",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "alsoQueueAction": {
+            "key": "alsoQueueAction",
+            "trans": "也添加进队列",
+            "des": "将另一个动作添加到序列中。忽略行动的要求",
+            "type": "action refs",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "alsoTriggerOrQueueActionConditional": {
+            "key": "alsoTriggerOrQueueActionConditional",
+            "trans": "也执行队列或需执行条件",
+            "des": "将此操作添加到序列。如果条件不满足(false)则忽略alsoQueueAction。默认true.",
+            "type": "LogicBoolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "playSoundAtUnit": {
+            "key": "playSoundAtUnit",
+            "trans": "播放声音至单位",
+            "des": "动作结束时在当前位置播放声音。",
+            "type": "sound ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "playSoundGlobally": {
+            "key": "playSoundGlobally",
+            "trans": "播放声音至全图",
+            "des": "播放全局声音，所有玩家都能听到。",
+            "type": "sound ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "playSoundToPlayer": {
+            "key": "playSoundToPlayer",
+            "trans": "播放声音至玩家",
+            "des": "播放声音，只有自己能听到。",
+            "type": "sound ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "fireTurretXAtGround": {
+            "key": "fireTurretXAtGround",
+            "trans": "指定攻击地面炮塔",
+            "des": "使用此炮塔攻击玩家所指定的地面。",
+            "type": "turret ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "fireTurretXAtGround_withOffset": {
+            "key": "fireTurretXAtGround_withOffset",
+            "trans": "指定攻击地面坐标",
+            "des": "攻击指定坐标所在地面，不需要手动选择，",
+            "type": "point",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "fireTurretXAtGround_withProjectile": {
+            "key": "fireTurretXAtGround_withProjectile",
+            "trans": "指定攻击地面抛射体",
+            "des": "设定使用的抛射体，如果不设置则为炮塔默认的抛射体。",
+            "type": "projectile ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "fireTurretXAtGround_count": {
+            "key": "fireTurretXAtGround_count",
+            "trans": "指定攻击地面数量",
+            "des": "设置发射的抛射体数量，默认为1",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "fireTurretXAtGround_onlyOverPassableTileOf": {
+            "key": "fireTurretXAtGround_onlyOverPassableTileOf",
+            "trans": "指定攻击地面类型",
+            "des": "设置手动选择的地面需要满足这种运动方式。列表：无，陆地，建筑，空军，水。两栖，跨悬崖，跨悬崖和度水。\nNONE LAND BUILDING AIR WATER HOVER OVER_CLIFF OVER_CLIFF_WATER ",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "spawnUnits": {
+            "key": "spawnUnits",
+            "trans": "产生单位",
+            "des": "用于action刷兵，大多数单位的生成键都支持多个单位且带有参数。注意：与spawnUnit不能混用spawnUnit用于抛射体。",
+            "type": "unitlist",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "spawnEffects": {
+            "key": "spawnEffects",
+            "trans": "产生效果",
+            "des": "产生指定效果",
+            "type": "effect ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "produceUnits": {
+            "key": "produceUnits",
+            "trans": "生产单位",
+            "des": "类似spawnUnits，但是单位像正常生产一样，并获得路径的移动。1.13只对非建筑物刷的单位有效。",
+            "type": "units",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "offsetSelfAbsolute": {
+            "key": "offsetSelfAbsolute",
+            "trans": "",
+            "des": "将单位位置当前指定位置。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addUnitsIntoTransport": {
+            "key": "addUnitsIntoTransport",
+            "trans": "添加单位到载具",
+            "des": "将单位添加到运输槽中，在添加之前会检查空间是否够。",
+            "type": "unit list",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "deleteNumUnitsFromTransport": {
+            "key": "deleteNumUnitsFromTransport",
+            "trans": "从载具中删除单位数",
+            "des": "从载具中删除指定数量单位。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "deleteNumUnitsFromTransport_onlyWithTags": {
+            "key": "deleteNumUnitsFromTransport_onlyWithTags",
+            "trans": "从载具删除带标签单位",
+            "des": "从载具中删除具有此标签的指定数量单位。",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "startUnloadingTransport": {
+            "key": "startUnloadingTransport",
+            "trans": "开始卸载单位",
+            "des": "开始卸载单位",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "forceUnloadTransportNow": {
+            "key": "forceUnloadTransportNow",
+            "trans": "强制卸载单位",
+            "des": "立即强制卸载单位",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "forceUnloadTransportNow_onlyOnSlot": {
+            "key": "forceUnloadTransportNow_onlyOnSlot",
+            "trans": "强制卸载指定槽位单位",
+            "des": "强制卸载指定槽位单位",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "clearAllWaypoints": {
+            "key": "clearAllWaypoints",
+            "trans": "清除所有路径点",
+            "des": "清除当前所有路径。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "clearActiveWaypoint": {
+            "key": "clearActiveWaypoint",
+            "trans": "清除当前路径点",
+            "des": "清除当前路径，也就是停止当前动作，执行下一个路径点。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addWaypoint_type": {
+            "key": "addWaypoint_type",
+            "trans": "添加路径点动作类型",
+            "des": "添加的路径点类型。值列表：移动，移动攻击，防守，进入载具，主动装载，攻击，回收，维修，靠近目标，建造，跟随，被动。\nmove, attackMove, guard, loadInto, loadUp, attack, reclaim, repair, touchTarget, build, follow，setPassiveTarget",
+            "type": "type",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addWaypoint_unitType": {
+            "key": "addWaypoint_unitType",
+            "trans": "添加路径点单位类型",
+            "des": "仅用于addWaypoint_type：build",
+            "type": "building",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addWaypoint_prepend": {
+            "key": "addWaypoint_prepend",
+            "trans": "添加路径点序列位置",
+            "des": "添加到路径点的开头或结尾",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addWaypoint_triggerActionIfFailed": {
+            "key": "addWaypoint_triggerActionIfFailed",
+            "trans": "添加路径点失败触发",
+            "des": "如果target_nearestUnit找不到匹配项，因此无法添加航点，则触发此操作",
+            "type": "actions",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addWaypoint_triggerActionIfMatched": {
+            "key": "addWaypoint_triggerActionIfMatched",
+            "trans": "添加路径点匹配触发",
+            "des": "",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addWaypoint_maxTime": {
+            "key": "addWaypoint_maxTime",
+            "trans": "添加路径点检索时间",
+            "des": "如果此路径点这么久还无法执行完成，则取消。",
+            "type": "time",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addWaypoint_target_nearestUnit_tagged": {
+            "key": "addWaypoint_target_nearestUnit_tagged",
+            "trans": "添加路径点检索标签",
+            "des": "添加的路径点目标为靠近有此标签的单位。",
+            "type": "tags",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addWaypoint_target_nearestUnit_team": {
+            "key": "addWaypoint_target_nearestUnit_team",
+            "trans": "添加路径点靠近队伍",
+            "des": "添加的路径点目标需要的所属方：己方|中立|盟友|任何，own|neutral|ally|enemy|any",
+            "type": "relation",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addWaypoint_target_nearestUnit_maxRange": {
+            "key": "addWaypoint_target_nearestUnit_maxRange",
+            "trans": "添加路径点检索范围",
+            "des": "添加的路径点靠近某目标时考虑的最大范围。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addWaypoint_target_mapMustBeReachable": {
+            "key": "addWaypoint_target_mapMustBeReachable",
+            "trans": "添加路径点路径可达",
+            "des": "添加的路径点靠近某目标时必须是有可到达路径的。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addWaypoint_position_offsetFromSelf": {
+            "key": "addWaypoint_position_offsetFromSelf",
+            "trans": "添加路径点坐标偏移",
+            "des": "添加的路径点相对于自身偏移的坐标。",
+            "type": "point",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addWaypoint_position_fromAction": {
+            "key": "addWaypoint_position_fromAction",
+            "trans": "添加路径点动作坐标",
+            "des": "将当前动作指定的坐标添加进路径序列中。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addWaypoint_position_randomOffsetFromSelf": {
+            "key": "addWaypoint_position_randomOffsetFromSelf",
+            "trans": "添加路径点随机偏移",
+            "des": "添加坐标进路径点时的随机值。",
+            "type": "int s",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addWaypoint_position_relativeOffsetFromSelf": {
+            "key": "addWaypoint_position_relativeOffsetFromSelf",
+            "trans": "添加路径点相对偏移",
+            "des": "添加路径点位置相对自身偏移量。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addWaypoint_target_randomUnit_tagged": {
+            "key": "addWaypoint_target_randomUnit_tagged",
+            "trans": "添加指定标签的随机单位",
+            "des": "添加路径点单位为指定标签的随机单位",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addWaypoint_target_randomUnit_team": {
+            "key": "addWaypoint_target_randomUnit_team",
+            "trans": "添加指定队伍的随机单位",
+            "des": "添加路径点单位为指定队伍的随机单位",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addWaypoint_target_randomUnit_maxRange": {
+            "key": "addWaypoint_target_randomUnit_maxRange",
+            "trans": "添加指定范围的随机单位",
+            "des": "添加路径点单位为指定范围的随机单位",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addAllActionCooldownsTime": {
+            "key": "addAllActionCooldownsTime",
+            "trans": "增加所有动作冷却时间",
+            "des": "增加所有action的冷却时间。",
+            "type": "time",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addActionCooldownTime": {
+            "key": "addActionCooldownTime",
+            "trans": "增加动作冷却时间",
+            "des": "增加动作冷却时间，制作先充能再使用的action更加容易了。",
+            "type": "time",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addActionCooldownApplyToActions": {
+            "key": "addActionCooldownApplyToActions",
+            "trans": "添加指定动作冷却时间",
+            "des": "action id，设置addActionCooldownTime的目标。默认情况下是当前操作本身。",
+            "type": "action ids",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "clearAllActionCooldowns": {
+            "key": "clearAllActionCooldowns",
+            "trans": "清除所有动作冷却时间",
+            "des": "清除所有动作冷却时间，使其立即可用。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "playAnimation": {
+            "key": "playAnimation",
+            "trans": "播放动画",
+            "des": "播放[animation_xx]类型动画。",
+            "type": "animation ref",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "playAnimationIfNotPlaying": {
+            "key": "playAnimationIfNotPlaying",
+            "trans": "播放动画限制",
+            "des": "如果该动画已经在播放，就不再播放动画。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "finishPlayingLastAnimation": {
+            "key": "finishPlayingLastAnimation",
+            "trans": "完成最会动画",
+            "des": "完成最后一个动画，包括融合",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "stopLastAnimation": {
+            "key": "stopLastAnimation",
+            "trans": "停止最后动画",
+            "des": "停止最后一个动画，跳过融合",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "switchToNeutralTeam": {
+            "key": "switchToNeutralTeam",
+            "trans": "切换至中立队伍",
+            "des": "将队伍更改为中立。该队伍与其他所有队伍结盟。除非使用[core]stayNeutral:true，否则它将被附近的单位捕获。",
+            "type": "boolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "switchToAggressiveTeam": {
+            "key": "switchToAggressiveTeam",
+            "trans": "切换至侵略性队伍",
+            "des": "将此单位队伍更改为侵略性的内置队伍。不能被其它单位捕获。",
+            "type": "boolean",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "takeResources": {
+            "key": "takeResources",
+            "trans": "提取资源",
+            "des": "提取资源，至少写一种资源。",
+            "type": "customPrice",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "takeResources_includeUnitsInTransport": {
+            "key": "takeResources_includeUnitsInTransport",
+            "trans": "提取资源包括载具内",
+            "des": "提取资源，包括载具内单位。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "takeResources_includeParent": {
+            "key": "takeResources_includeParent",
+            "trans": "提取资源包括父单位或载具",
+            "des": "提取资源，包括父单位和运输载具。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "takeResources_includeUnitsWithinRange": {
+            "key": "takeResources_includeUnitsWithinRange",
+            "trans": "提取资源范围",
+            "des": "提取资源，在此范围内。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "takeResources_includeUnitsWithinRange_team": {
+            "key": "takeResources_includeUnitsWithinRange_team",
+            "trans": "提取资源队伍",
+            "des": "提取在此范围内队伍的资源。与“includeUnitsWithinRange”一起使用，默认为own。可以是：\n己方|中立|盟友|任何|除自己外盟友，own|neutral|ally|enemy|any|allyNotOwn",
+            "type": "TeamRelation",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "takeResources_excludeUnitsWithoutTags": {
+            "key": "takeResources_excludeUnitsWithoutTags",
+            "trans": "提取资源标签",
+            "des": "提取资源，但排除没有此标签的单位。",
+            "type": "tags",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "takeResources_excludeUnitsWithTheseResources": {
+            "key": "takeResources_excludeUnitsWithTheseResources",
+            "trans": "提取资源排除资源",
+            "des": "提取资源，不包括拥有这些资源的单位。",
+            "type": "customPrice",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "takeResources_excludeUnitsWithoutAllResources": {
+            "key": "takeResources_excludeUnitsWithoutAllResources",
+            "trans": "提取资源排除不足",
+            "des": "提取资源，排除缺乏资源者。默认为true.",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "takeResources_triggerActionIfAnyCollected": {
+            "key": "takeResources_triggerActionIfAnyCollected",
+            "trans": "提取资源成功触发",
+            "des": "如果有任何收集，则触发动作。",
+            "type": "action refs",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "takeResources_triggerActionIfNoneCollected": {
+            "key": "takeResources_triggerActionIfNoneCollected",
+            "trans": "提取资源失败触发",
+            "des": "如果没有收集，则触发操作。",
+            "type": "action refs",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "takeResources_discardCollected": {
+            "key": "takeResources_discardCollected",
+            "trans": "提取资源删除",
+            "des": "从目标中获取资源，但不向自身添加也就是删除。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "takeResources_keepResourcesOnTarget": {
+            "key": "takeResources_keepResourcesOnTarget",
+            "trans": "提取资源克隆",
+            "des": "不从目标添加或删除资源。但克隆资源。与takeResources_discardCollected和takeResources_triggerActionIfAnyCollected一起使用以创建资源检测器。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "takeResources_maxUnits": {
+            "key": "takeResources_maxUnits",
+            "trans": "提取资源目标量",
+            "des": "最多从多少单位提取资源，默认为1。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "takeResources_directTransferStoppingAtZero": {
+            "key": "takeResources_directTransferStoppingAtZero",
+            "trans": "提取资源直接转换至零",
+            "des": "提取资源直接转换至0,用于完全转换。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "convertResource_from": {
+            "key": "convertResource_from",
+            "trans": "转换资源来源",
+            "des": "将此资源转换资源为别的资源。",
+            "type": "customResource",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "convertResource_to": {
+            "key": "convertResource_to",
+            "trans": "转换资源至",
+            "des": "将资源转后为此资源，要提供的自定义资源的名称",
+            "type": "customResource",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "convertResource_minAmount": {
+            "key": "convertResource_minAmount",
+            "trans": "转换资源至少",
+            "des": "如果来源中资源小于该数量，则跳过。默认为0。在大多数情况下可能不需要。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "convertResource_maxAmount": {
+            "key": "convertResource_maxAmount",
+            "trans": "转换资源至多",
+            "des": "“来源资源”和“转换后资源”之间的最大转化量",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "convertResource_multiplyAmountBy": {
+            "key": "convertResource_multiplyAmountBy",
+            "trans": "转换资源倍率",
+            "des": "资源转换倍率，不影响提取的数量。默认值为1。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "resourceAmount": {
+            "key": "resourceAmount",
+            "trans": "资源类型",
+            "des": "自定义资源的名称，使用以下3个键进行设置。所有键都是可选的，可以一起使用。",
+            "type": "customResource",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "resourceAmount_setValue": {
+            "key": "resourceAmount_setValue",
+            "trans": "资源类型设置数值",
+            "des": "设置此资源的绝对值，忽略资源的当前值。默认忽略。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "resourceAmount_addOtherResource": {
+            "key": "resourceAmount_addOtherResource",
+            "trans": "资源类型添加至",
+            "des": "添加到其中的另一个自定义资源的名称。可以不使用resourceAmount_setValue，只是添加资源。或者使用resourceAmount_setValue:0复制一个资源值。",
+            "type": "customResource",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "resourceAmount_multiplyBy": {
+            "key": "resourceAmount_multiplyBy",
+            "trans": "资源类型乘数",
+            "des": "默认值为1。将当前资源值乘上此值。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "attachments_addNewUnits": {
+            "key": "attachments_addNewUnits",
+            "trans": "附属添加单位",
+            "des": "添加单位作为其子单位，需要定义附属位置。",
+            "type": "unit",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "attachments_deleteNumUnits": {
+            "key": "attachments_deleteNumUnits",
+            "trans": "附属删除单位数",
+            "des": "删除单位数量",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "attachments_onlyOnSlots": {
+            "key": "attachments_onlyOnSlots",
+            "trans": "附属添加于槽位",
+            "des": "只添加于特定槽位",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "disconnectFromParent": {
+            "key": "disconnectFromParent",
+            "trans": "脱离父单位",
+            "des": "子单位脱离父单位",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "attachments_unload": {
+            "key": "attachments_unload",
+            "trans": "卸载附属",
+            "des": "附属单位卸载",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "attachments_disconnect": {
+            "key": "attachments_disconnect",
+            "trans": "附属断开连接",
+            "des": "附属单位断开连接",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "temporarilyAddTags": {
+            "key": "temporarilyAddTags",
+            "trans": "临时标签添加",
+            "des": "将标签添加到单位，直到转换或重置。",
+            "type": "tags",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "temporarilyRemoveTags": {
+            "key": "temporarilyRemoveTags",
+            "trans": "临时标签删除",
+            "des": "从单位上删除标签，直到将其转换或重置。",
+            "type": "tags",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "resetToDefaultTags": {
+            "key": "resetToDefaultTags",
+            "trans": "标签重置",
+            "des": "重置为默认标签。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "addGlobalTeamTags": {
+            "key": "addGlobalTeamTags",
+            "trans": "添加全局标签",
+            "des": "为玩家的团队添加此全局标签。与self.globalTeamTags()一起使用可创建解锁和升级。",
+            "type": "tags",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "removeGlobalTeamTags": {
+            "key": "removeGlobalTeamTags",
+            "trans": "移除全局标签",
+            "des": "从玩家队伍中删除此全局标签。",
+            "type": "tags",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "showMessageToPlayer": {
+            "key": "showMessageToPlayer",
+            "trans": "发送消息至玩家",
+            "des": "向玩家个人发送信息。自己发给自己。",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "showMessageToAllPlayers": {
+            "key": "showMessageToAllPlayers",
+            "trans": "发送消息至所有",
+            "des": "向所有玩家发送消息。",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "showMessageToAllEnemyPlayers": {
+            "key": "showMessageToAllEnemyPlayers",
+            "trans": "发送消息给所有敌人",
+            "des": "发送消息给所有敌人。",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "showQuickWarLogToPlayer": {
+            "key": "showQuickWarLogToPlayer",
+            "trans": "发送战争快报至玩家",
+            "des": "向玩家个人发送战争快报。（在左下角）",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "showQuickWarLogToAllPlayers": {
+            "key": "showQuickWarLogToAllPlayers",
+            "trans": "发送战争快报至所有",
+            "des": "向所有玩家发送战争快报。（在左下角）",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "debugMessage": {
+            "key": "debugMessage",
+            "trans": "排错信息",
+            "des": "仅在启用调试模式的沙箱中显示。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        }
+    },
+    "spawn": {
+        "sectionKey": "spawn",
+        "sectionName": "刷兵",
+        "neutralTeam": {
+            "key": "neutralTeam",
+            "trans": "中立",
+            "des": "产生中立团队而不是所属玩家。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "setToTeamOfLastAttacker": {
+            "key": "setToTeamOfLastAttacker",
+            "trans": "所属攻击者",
+            "des": "生成单位归属于攻击者。（在[core] unitsSpawnedOnDeath上有用）",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "maxSpawnLimit": {
+            "key": "maxSpawnLimit",
+            "trans": "最大产生限制",
+            "des": "抛射体的最大产生数量",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "gridAlign": {
+            "key": "gridAlign",
+            "trans": "对齐网格",
+            "des": "将生成位置与网格对齐，对建筑物有用",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "skipIfOverlapping": {
+            "key": "skipIfOverlapping",
+            "trans": "跳过条件",
+            "des": "如果在无效的位置忽略单位生成。 例如基于LAND的单位不会产生在水中。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "offsetX": {
+            "key": "offsetX",
+            "trans": "偏移量x",
+            "des": "刷出的抛射体的x轴偏移量",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "offsetY": {
+            "key": "offsetY",
+            "trans": "偏移量y",
+            "des": "刷出的抛射体的y轴偏移量",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "offsetRandomX": {
+            "key": "offsetRandomX",
+            "trans": "偏移随机X",
+            "des": "刷出的抛射体的x轴的随机偏移量",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "offsetRandomY": {
+            "key": "offsetRandomY",
+            "trans": "偏移随机Y",
+            "des": "刷出的抛射体的y轴的随机偏移量",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "offsetRandomDir": {
+            "key": "offsetRandomDir",
+            "trans": "偏移随机角度",
+            "des": "刷出的抛射体的角度随机偏移量",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "offsetHeight": {
+            "key": "offsetHeight",
+            "trans": "偏移高度",
+            "des": "刷出的抛射体的z轴也就是高度偏移",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "offsetDir": {
+            "key": "offsetDir",
+            "trans": "偏移角度",
+            "des": "刷出的抛射体的角度偏移",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "transportedUnitsToTransfer": {
+            "key": "transportedUnitsToTransfer",
+            "trans": "载员至载具",
+            "des": "将指定数量的单元放入刷出的单元的运输位中。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "刷弹": {
+            "key": "刷弹",
+            "trans": "",
+            "des": "Spawn Projectiles line",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "recursionLimit": {
+            "key": "recursionLimit",
+            "trans": "递归限制",
+            "des": "用于限制抛射体刷抛射体自身的上限,而不会产生死循环。这对自动生成很有用，因为不会无限生成，有利于链条爆炸",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "offsetRandomXY": {
+            "key": "offsetRandomXY",
+            "trans": "偏移随机XY",
+            "des": "刷出的抛射体在两个方向的偏移随机偏移，使真正的在一个区域随机化。",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        }
+    },
+    "logic": {
+        "true ": {
+            "key": "true ",
+            "trans": "是",
+            "des": "满足/是/对/为真/1，不建议使用1或0，不是所有代码都支持。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "false ": {
+            "key": "false ",
+            "trans": "非",
+            "des": "不满足/非/错/假/0",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "if": {
+            "key": "if",
+            "trans": "如果",
+            "des": "所有逻辑布尔值使用if开始，除非仅使用true/false",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "and": {
+            "key": "and",
+            "trans": "和",
+            "des": "需要and两边条件都满足执行。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "or": {
+            "key": "or",
+            "trans": "或者",
+            "des": "or两边条件满足一个即可执行。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "not": {
+            "key": "not",
+            "trans": "非",
+            "des": "将逻辑结果取反。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isUnderwater()": {
+            "key": "self.isUnderwater()",
+            "trans": "自身在水下",
+            "des": "单位在水下，深水单位如潜艇。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isAtGroundHeight()": {
+            "key": "self.isAtGroundHeight()",
+            "trans": "自身在地面高度",
+            "des": "单位在地面,触发范围是-1~4，如果你单位高度在不断变化时超过此值的话，此条不一定触发，因为铁锈检测频率默认是1s.\n等同于self.gound()或self.ground()",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isFlying()": {
+            "key": "self.isFlying()",
+            "trans": "自身在天上",
+            "des": "如果单位在天上飞行，则执行。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isMoving()": {
+            "key": "self.isMoving()",
+            "trans": "自身在移动",
+            "des": "如果自身在移动则执行。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isAtTopSpeed()": {
+            "key": "self.isAtTopSpeed()",
+            "trans": "自身到最高速度",
+            "des": "如果到达最高速度则执行。等同self.maxspeed()",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isInWater()": {
+            "key": "self.isInWater()",
+            "trans": "自身在水中",
+            "des": "如果自身在水中则执行。等同于self.inwater()。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isOverwater()": {
+            "key": "self.isOverwater()",
+            "trans": "自身在水上",
+            "des": "如果自身投影在水面这种地形则执行。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isOverLiquid()": {
+            "key": "self.isOverLiquid()",
+            "trans": "自身在液体上",
+            "des": "如果自身在液体则执行。岩浆算为液体。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isOverClift()": {
+            "key": "self.isOverClift()",
+            "trans": "自身在悬崖上",
+            "des": "如果自身在悬崖上则执行。等同self.isOverCliff()",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isOverPassableTile()": {
+            "key": "self.isOverPassableTile()",
+            "trans": "自身在地块类型上",
+            "des": "如果自身在这类通行地块上则执行，类型：无、陆地、建筑、空中、水面、两栖、跨悬崖、跨水和悬崖\nNONE、LAND、BUILDING、AIR、WATER、HOVER、OVER_CLIFF、OVER_CLIFF_WATER",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isOverOpenLand()": {
+            "key": "self.isOverOpenLand()",
+            "trans": "自身在开阔地带",
+            "des": "如果自身在开阔地带则执行。self.isOverPassableTile（type ='LAND'）的快捷方式",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.height()": {
+            "key": "self.height()",
+            "trans": "自身高度",
+            "des": "如果自身在特定高度则执行。(参数:greaterThan,lessThan,equalTo,empty,full)参数，超过，少于，等于，空，满)",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.hasResources()": {
+            "key": "self.hasResources()",
+            "trans": "自身有资源",
+            "des": "可以检查多种资源（所有价格参数）",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.resource()": {
+            "key": "self.resource()",
+            "trans": "自身资源",
+            "des": "检查单个资源条件。（参数：greaterThan,lessThan,equalTo）参数，超过，少于，等于",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isResourceLargerThan": {
+            "key": "self.isResourceLargerThan",
+            "trans": "自身资源大于",
+            "des": "比较两个资源，注意，multiplyTargetBy不造成资源改变。(参数：来源，比较目标，超过，乘数 source=x, compareTarget=x, byMoreThan=x, multiplyTargetBy=x)",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.hp()": {
+            "key": "self.hp()",
+            "trans": "自身血量",
+            "des": "自身血量条件。(参数:greaterThan,lessThan,equalTo,empty,full)参数，超过，少于，等于，空，满",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.ammo()": {
+            "key": "self.ammo()",
+            "trans": "自身弹药",
+            "des": "自身弹药条件。(参数:greaterThan,lessThan,equalTo,empty,full)参数，超过，少于，等于，空，满",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isAmmoEmpty()": {
+            "key": "self.isAmmoEmpty()",
+            "trans": "自身弹药空",
+            "des": "自身弹药为空。self.ammo(empty=true)的快捷方式",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.ammoIncludingQueued()": {
+            "key": "self.ammoIncludingQueued()",
+            "trans": "自身弹药包括队列",
+            "des": "自身弹药数量，包括还在队列中的。(参数:greaterThan,lessThan,equalTo,empty,full)参数：大于，小于，等于，空，满",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.energy()": {
+            "key": "self.energy()",
+            "trans": "自身能量",
+            "des": "自身能量数值。(参数:greaterThan,lessThan,equalTo,empty,full)参数，超过，少于，等于，空，满",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.energyIncludingQueued()": {
+            "key": "self.energyIncludingQueued()",
+            "trans": "自身能量包括队列",
+            "des": "自身能量数值，包括还在队列中的。(参数:greaterThan,lessThan,equalTo,empty,full)参数：大于，小于，等于，空，满",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isEnergyFull()": {
+            "key": "self.isEnergyFull()",
+            "trans": "自身护盾满",
+            "des": "自身能量为满。self.energy(full=true)的快捷方式",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isEnergyEmpty()": {
+            "key": "self.isEnergyEmpty()",
+            "trans": "自身护盾空",
+            "des": "自身能量为空。self.energy(empty=true)的快捷方式。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.shield()": {
+            "key": "self.shield()",
+            "trans": "自身护盾",
+            "des": "自身护盾数值。(参数:greaterThan,lessThan,equalTo,empty,full)参数：大于，小于，等于，空，满",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.kills() ": {
+            "key": "self.kills() ",
+            "trans": "自身杀敌数",
+            "des": "自身杀敌数量。(参数:greaterThan,lessThan,equalTo)（参数：大于，小于，等于）",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.queueSize()": {
+            "key": "self.queueSize()",
+            "trans": "自身队列量",
+            "des": "自身队列数量。(参数:greaterThan,lessThan,equalTo,empty,full)参数：大于，小于，等于，空，满",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "game.nukesEnabled()": {
+            "key": "game.nukesEnabled()",
+            "trans": "游戏核武可用",
+            "des": "游戏核武可用。也就是开局前，高级设置的启用核武选项。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.hasFlag()": {
+            "key": "self.hasFlag()",
+            "trans": "自身有标志",
+            "des": "自身拥有标志。可用通过增加资源和价格修改。（参数：id = 0-31），使用addResources在action中更改此vaule",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.tags()": {
+            "key": "self.tags()",
+            "trans": "自身有标签",
+            "des": "自身拥有标签。等同self.hasTags()",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.globalTeamTags()": {
+            "key": "self.globalTeamTags()",
+            "trans": "有全局标签",
+            "des": "有全局标签，(parameters: includes)参数:包括",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.transportingCount()": {
+            "key": "self.transportingCount()",
+            "trans": "自身运输数量",
+            "des": "载具运输单位数量(parameters: greaterThan, lessThan,equalTo,empty)（参数：大于，小于，等于，为空）",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.numberOfAttachedUnits()": {
+            "key": "self.numberOfAttachedUnits()",
+            "trans": "自身有子单位",
+            "des": "自身有子单位数量。（withTag,greaterThan,lessThan,equalTo）参数:标签，大于、小于、等于",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isAttacking()": {
+            "key": "self.isAttacking()",
+            "trans": "自身在攻击",
+            "des": "单位正在攻击。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.hasActiveWaypoint()": {
+            "key": "self.hasActiveWaypoint()",
+            "trans": "自身有活动的路径点",
+            "des": "单位当前活动的路径点为此类型。类型=路径点类型。（[type = WAYPOINT_TYPE]）",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.transportingUnitWithTags()": {
+            "key": "self.transportingUnitWithTags()",
+            "trans": "自身运输单位有标签",
+            "des": "自身运输单位有标签(parameters: includes)参数:包括",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.hasParent()": {
+            "key": "self.hasParent()",
+            "trans": "自身有父单位",
+            "des": "用于子单位和载员逻辑。有父单位时执行。可选参数:需要标签。withTag =\"unit\"",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.hasTakenDamage()": {
+            "key": "self.hasTakenDamage()",
+            "trans": "受到伤害",
+            "des": "单位受到伤害。参数：几秒内，几秒后。(parameters:withinSeconds=X,laterThanSeconds=X)",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.timeAlive()": {
+            "key": "self.timeAlive()",
+            "trans": "存活时间",
+            "des": "单位存活时间。参数：几秒内，几秒后。(parameters:withinSeconds=X,laterThanSeconds=X)",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.lastConverted()": {
+            "key": "self.lastConverted()",
+            "trans": "最后转换时间",
+            "des": "单位最后转换时间。参数：几秒内，几秒后。(parameters:withinSeconds=X,laterThanSeconds=X)",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.customTimer()": {
+            "key": "self.customTimer()",
+            "trans": "自身自定义计时器",
+            "des": "自身自定义计时器。参数：几秒内，几秒后。(parameters:withinSeconds=X,laterThanSeconds=X)",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isOnNeutralTeam()": {
+            "key": "self.isOnNeutralTeam()",
+            "trans": "自身在中立队伍",
+            "des": "自身在中立队伍。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "numberOfUnitsInTeam()": {
+            "key": "numberOfUnitsInTeam()",
+            "trans": "队伍中此单位数量",
+            "des": "玩家自身拥有此单位数量。(参数:withTag,greaterThan,lessThan,withinRange,incompleteBuildings,factoryQueue)\n参数：标签，超过，少于，范围，建造中，队列中",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.numberOfUnitsInAllyNotOwnTeam()": {
+            "key": "self.numberOfUnitsInAllyNotOwnTeam()",
+            "trans": "盟友有此单位数量",
+            "des": "盟友拥有此单位的数量。(参数:withTag,greaterThan,lessThan,withinRange,incompleteBuildings,factoryQueue)",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "numberOfUnitsInEnemyTeam()": {
+            "key": "numberOfUnitsInEnemyTeam()",
+            "trans": "敌人有此单位数量",
+            "des": "敌人拥有此单位的数量。(参数:withTag,greaterThan,lessThan,withinRange,incompleteBuildings,factoryQueue)",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "numberOfUnitsInNeutralTeam()": {
+            "key": "numberOfUnitsInNeutralTeam()",
+            "trans": "中立有此单位数量",
+            "des": "中立队伍拥有此单位数量。(参数:withTag,greaterThan,lessThan,withinRange,incompleteBuildings,factoryQueue)",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.hasUnitInTeam()": {
+            "key": "self.hasUnitInTeam()",
+            "trans": "自身队伍有单位",
+            "des": "自身队伍拥有此单位数量。(参数:withTag，intraRange，incompleteBuildings，factoryQueue)numberOfUnitsInTeam的别名",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.noUnitInTeam()": {
+            "key": "self.noUnitInTeam()",
+            "trans": "自身队伍无单位",
+            "des": "自身队伍单位数量不满足。(参数:withTag，intraRange，incompleteBuildings，factoryQueue)numberOfUnitsInTeam的别名",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "self.isControlledByAI()": {
+            "key": "self.isControlledByAI()",
+            "trans": "自身属于AI控制",
+            "des": "单位归属于AI所属放控制",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        }
+    },
+    "other": {
+        "anyRuleInGroup": {
+            "key": "anyRuleInGroup",
+            "trans": "放置规则组",
+            "des": "放置规则组名。（仅需要通过此组规则中的1条，而不是全部通过。在其他放置规则中可使用相同的组名称来创建组。）",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "searchTags": {
+            "key": "searchTags",
+            "trans": "检索标签",
+            "des": "搜索至少包含这些标签之一的任何单位",
+            "type": "tag list",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "searchTeam": {
+            "key": "searchTeam",
+            "trans": "检索队伍",
+            "des": "要搜索的团队可以是：自身|中立|盟友非自身|盟友|敌人|任何。  own|neutral|allyNotOwn|ally|enemy|any",
+            "type": "relation",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "searchOffsetX": {
+            "key": "searchOffsetX",
+            "trans": "检索偏移",
+            "des": "检索偏移，默认为0",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "searchOffsetY": {
+            "key": "searchOffsetY",
+            "trans": "检索偏移",
+            "des": "检索偏移，默认为0",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "searchDistance": {
+            "key": "searchDistance",
+            "trans": "搜索距离",
+            "des": "搜索距离",
+            "type": "float",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "excludeIncompleteBuildings": {
+            "key": "excludeIncompleteBuildings",
+            "trans": "排除不完整建筑",
+            "des": "排除不完整的建筑",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "excludeNonBuildings": {
+            "key": "excludeNonBuildings",
+            "trans": "排除非建筑",
+            "des": "排除非建筑",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "minCount": {
+            "key": "minCount",
+            "trans": "最小数量",
+            "des": "设定需要在搜索中找到的单位的最小数量。(如需要靠近某物)。默认值为0",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "maxCount": {
+            "key": "maxCount",
+            "trans": "最大数量",
+            "des": "在匹配失败前设置最大单位数量(例如不能接近某个值)。默认为无限的",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "blocksPlacement": {
+            "key": "blocksPlacement",
+            "trans": "禁止放置",
+            "des": "禁止放置。默认为true。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "cannotPlaceMessage": {
+            "key": "cannotPlaceMessage",
+            "trans": "失败信息",
+            "des": "如果此放置规则失败，则会向玩家显示消息（将成为mergedRuleGroup中的第一个失败规则）",
+            "type": "LocaleString",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "checkEachTile": {
+            "key": "checkEachTile",
+            "trans": "检查每个地块",
+            "des": "[true / false]默认为true（仅对测试单元中心设置为false，true会检查显示在放置网格上的单元下方的每个图块）",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "价格/资源": {
+            "key": "价格/资源",
+            "trans": "",
+            "des": "Prices/Resources",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "credits": {
+            "key": "credits",
+            "trans": "资金",
+            "des": "铁锈中默认用于全局的资金。",
+            "type": "Resources",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "energy": {
+            "key": "energy",
+            "trans": "能量",
+            "des": "单位使用的能量，如可用于开火限制。",
+            "type": "Resources",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "hp": {
+            "key": "hp",
+            "trans": "血量",
+            "des": "单位血量，一般血量归零时就会销毁单位。",
+            "type": "Resources",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "shield": {
+            "key": "shield",
+            "trans": "护盾",
+            "des": "单位护盾，一般用于抵挡敌人攻击。",
+            "type": "Resources",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "ammo": {
+            "key": "ammo",
+            "trans": "弹药",
+            "des": "弹药，每个单位的隐藏值，供mod使用。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "setFlag": {
+            "key": "setFlag",
+            "trans": "设置标志",
+            "des": "设置标志，范围0-31。标志存储在每个单元中，与addResources，resourceUsage或price等一起使用。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "unsetFlag": {
+            "key": "unsetFlag",
+            "trans": "取消标志",
+            "des": "取消已经设置的标志",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "hasFlag": {
+            "key": "hasFlag",
+            "trans": "拥有标志",
+            "des": "拥有标志。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "hasMissingFlag": {
+            "key": "hasMissingFlag",
+            "trans": "没有标志",
+            "des": "没有标志。",
+            "type": "int",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "X": {
+            "key": "X",
+            "trans": "X",
+            "des": "[global_resource_x]或[resource_x]节中定义的任何资源。",
+            "type": "Resources",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "全局资源": {
+            "key": "全局资源",
+            "trans": "",
+            "des": "[global_resource_NAME]",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "displayName": {
+            "key": "displayName",
+            "trans": "显示名称",
+            "des": "UI中此资源的名称(如悬停在单元信息上)",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "displayNameShort": {
+            "key": "displayNameShort",
+            "trans": "显示短名称",
+            "des": "在较小的UI上显示的文本（如action的悬浮文本）默认为displayName",
+            "type": "string",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "hidden": {
+            "key": "hidden",
+            "trans": "隐藏",
+            "des": "对玩家隐藏这个资源",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "displayColor": {
+            "key": "displayColor",
+            "trans": "显示颜色",
+            "des": "颜色，可以是十六进制，带有可选的alpha",
+            "type": "color",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "displayRoundedDown": {
+            "key": "displayRoundedDown",
+            "trans": "显示为整数",
+            "des": "对资源进行舍入显示为整数。",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "局部资源": {
+            "key": "局部资源",
+            "trans": "",
+            "des": "[resource_NAME]",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "equivalentGlobalResourceForAI": {
+            "key": "equivalentGlobalResourceForAI",
+            "trans": "作为AI的全局资源",
+            "des": "用于向AI提示具有本地资源的资源节点可用于获取不同的全局资源。例如，当一台收割机卸载资源",
+            "type": "bool",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "模板": {
+            "key": "模板",
+            "trans": "",
+            "des": "[template_NAME]",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "@copyFromSection": {
+            "key": "@copyFromSection",
+            "trans": "复制节",
+            "des": "在任何节中使用，以引用节或模板的代码。如@copyFromSection template_name/action_name/projectile_name",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "@copyFrom_skipThisSection": {
+            "key": "@copyFrom_skipThisSection",
+            "trans": "复制但跳过节",
+            "des": "在任何节中使用，例如，在引用时候不复制某个action.",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "@define X": {
+            "key": "@define X",
+            "trans": "局部变量",
+            "des": "在一个节中定义一个局部变量(最好在模板外部)",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "@global X": {
+            "key": "@global X",
+            "trans": "全局变量",
+            "des": "定义在所有节中使用的全局变量。注意：局部变量具有更高的优先级",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "${X}": {
+            "key": "${X}",
+            "trans": "变量引用",
+            "des": "${X}可以用来引用变量(也可以在模板外部完成)",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "${section.key} ": {
+            "key": "${section.key} ",
+            "trans": "值引用",
+            "des": "${section.key}可以用来引用键（也可以在模板外部完成）。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "注释": {
+            "key": "注释",
+            "trans": "",
+            "des": "[comment_NAME]",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "补充一些杂项": {
+            "key": "补充一些杂项",
+            "trans": "",
+            "des": "描述",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "游戏默认声音列表(用于炮塔开火声或其他音效参考)": {
+            "key": "游戏默认声音列表(用于炮塔开火声或其他音效参考)",
+            "trans": "",
+            "des": "bug_attack, bug_die, building_explode, cannon_firing, click, click_add, click_remove, firing3, firing4, gun_fire, interface_error, large_gun_fire1, large_gun_fire2, laser_deflect, laser_deflect2, lighting_burst, message, missile_fire, missile_hit, move, nuke_explode, nuke_launch, plasma_fire, plasma_fire2, tank_firing, unit_explode, unit_explode_old, warning",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "techLevel": {
+            "key": "techLevel",
+            "trans": "",
+            "des": "“techLevel”单元生成参数,主要用于内置的单元和设置damagingBorder大小。计算方式是数值X地块5格。最小值为0，圈不可见。如填1则半径为5格。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "damagingBorder": {
+            "key": "damagingBorder",
+            "trans": "伤害边框",
+            "des": "此内部单位会生成一个圆形的安全区域，所有区域外的单位会不断收到伤害直到死亡。",
+            "type": "",
+            "isNecessary": false,
+            "isShow": false,
+            "value": null
+        },
+        "zonemarker": {
+            "key": "zonemarker",
+            "trans": "区域标记",
+            "des": "此单位用于指示伤害边框移动到何处，是放大还是缩小，可使用“techLevel”控制大小。",
+            "type": "",
             "isNecessary": false,
             "isShow": false,
             "value": null
