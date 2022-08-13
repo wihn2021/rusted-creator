@@ -14,29 +14,29 @@
       </button>
       <div v-if="template[ee].show">
         <template v-if="ee==='turret'&&unit[ee]">
-          <div v-for="t in unit.turret" :key="unit.turret.indexOf(t)">
-            <h2>turret{{ unit.turret.indexOf(t) }}</h2>
-            <button @click="unit.turret.splice(unit.turret.indexOf(t),1)">删除炮塔</button>
+          <div v-for="t in rangeArray(unit.turret)" :key="t">
+            <h2>turret{{ t }}</h2>
+            <button @click="unit.turret.splice(t,1)">删除炮塔</button>
             <!---
             <div style="position: static; text-align: center; display: block">
               <div style="text-align: center;position: center"><img :src="this.unit.graphics.image" style="margin: 0 auto"></div>
               <div style="text-align: center;position: center"><img :src="t.image" :style="turretStyle"></div>
             </div>
             --->
-            <div v-for="ff in Object.keys(t)" :key="ff">
+            <div v-for="ff in Object.keys(unit.turret[t])" :key="ff">
               <span :title="template.turret[ff].des">{{ template.turret[ff].trans }}</span>
-              <input type="checkbox" v-if="template[ee][ff].type==='bool'" v-model="t[ff]">
-              <input type="checkbox" v-if="template[ee][ff].type==='LogicBoolean'" v-model="t[ff]">
-              <input type="text" v-if="template[ee][ff].type==='string'" v-model="t[ff]">
-              <input type="text" v-if="template[ee][ff].type==='int'" v-model.number="t[ff]">
-              <input type="text" v-if="template[ee][ff].type==='float'" v-model.number="t[ff]">
-              <input type="text" v-if="template[ee][ff].type==='time'" v-model="t[ff]">
+              <input type="checkbox" v-if="template[ee][ff].type==='bool'" v-model="unit.turret[t][ff]">
+              <input type="checkbox" v-if="template[ee][ff].type==='LogicBoolean'" v-model="unit.turret[t][ff]">
+              <input type="text" v-if="template[ee][ff].type==='string'" v-model="unit.turret[t][ff]">
+              <input type="text" v-if="template[ee][ff].type==='int'" v-model.number="unit.turret[t][ff]">
+              <input type="text" v-if="template[ee][ff].type==='float'" v-model.number="unit.turret[t][ff]">
+              <input type="text" v-if="template[ee][ff].type==='time'" v-model="unit.turret[t][ff]">
               <div class="image file" v-if="template[ee][ff].type==='file (image)'">
-                <img :src="t[ff]" alt="">
+                <img :src="unit.turret[t][ff]" alt="">
                 <input type="file" accept="image/png" @change="base64encrypt(ee, ff)"
-                       :id="template[ee].sectionKey+ unit.turret.indexOf(t) + ff">
+                       :id="template[ee].sectionKey+ t + ff">
               </div>
-              <select v-if="template[ee][ff].type==='enum'" v-model="t[ff]">
+              <select v-if="template[ee][ff].type==='enum'" v-model="unit.turret[t][ff]">
                 <option v-for="g in template[ee][ff].enum" :key="g">{{ g }}</option>
               </select>
             </div>
@@ -171,6 +171,13 @@ export default {
     },
     newTurret() {
       this.unit.turret.push(TurretTmpl)
+    },
+    rangeArray(l) {
+      let res = []
+      for (let i=0;i<l.length;i++) {
+        res.push(i)
+      }
+      return res
     }
   },
   mounted() {
