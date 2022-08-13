@@ -6,26 +6,26 @@
     </select>
   </div>
   <template v-if="tmplSelect">
-    <div v-for="e in unit" :key="e.id">
-      <button @click="e.show=!e.show" style="width: 50%;text-align: left" v-if="e.sectionName">{{
-          e.sectionName
+    <div v-for="ee in Object.keys(unit)" :key="ee.id">
+      <button @click="template[ee].show=!template[ee].show" style="width: 50%;text-align: left" v-if="template[ee].sectionName">{{
+          template[ee].sectionName
         }}
       </button>
-      <div v-if="e.show">
-        <template v-for="f in e" :key="f.key">
-          <div v-if="f.isNecessary||f.isShow" class="unitdata">
-            <span :title="f.des" @dblclick="f.isShow=false">{{ f.trans }}: </span>
-            <input type="checkbox" v-if="f.type==='bool'" v-model="f.value">
-            <input type="text" v-if="f.type==='string'" v-model="f.value">
-            <input type="text" v-if="f.type==='int'" v-model.number="f.value">
-            <input type="text" v-if="f.type==='float'" v-model.number="f.value">
-            <input type="text" v-if="f.type==='time'" v-model="f.value">
-            <div class="image file" v-if="f.type==='file (image)'">
-              <img :src="f.value">
-              <input type="file" accept="image/png" @change="base64encrypt(e, f)" :id="e.sectionKey + f.key">
+      <div v-if="template[ee].show">
+        <template v-for="ff in Object.keys(unit[ee])" :key="ff">
+          <div v-if="template[ee][ff].isNecessary || template[ee][ff].isShow" class="unitdata">
+            <span :title="template[ee][ff].des" @dblclick="template[ee][ff].isShow=false">{{ template[ee][ff].trans }}: </span>
+            <input type="checkbox" v-if="template[ee][ff].type==='bool'" v-model="unit[ee][ff]">
+            <input type="text" v-if="template[ee][ff].type==='string'" v-model="unit[ee][ff]">
+            <input type="text" v-if="template[ee][ff].type==='int'" v-model.number="unit[ee][ff]">
+            <input type="text" v-if="template[ee][ff].type==='float'" v-model.number="unit[ee][ff]">
+            <input type="text" v-if="template[ee][ff].type==='time'" v-model="unit[ee][ff]">
+            <div class="image file" v-if="template[ee][ff].type==='file (image)'">
+              <img :src="unit[ee][ff]" alt="">
+              <input type="file" accept="image/png" @change="base64encrypt(ee, ff)" :id="template[ee].sectionKey + ff">
             </div>
-            <select v-if="f.type==='enum'" v-model="f.value">
-              <option v-for="g in f.enum" :key="g">{{ g }}</option>
+            <select v-if="template[ee][ff].type==='enum'" v-model="unit[ee][ff]">
+              <option v-for="g in template[ee][ff].enum" :key="g">{{ g }}</option>
             </select>
           </div>
         </template>
@@ -49,6 +49,7 @@ export default {
       templates: null,
       tmplSelect: null,
       unit: {},
+      template: null,
       output: null,
       outZip: new JSZip(),
     }
@@ -58,11 +59,11 @@ export default {
       fetch("/templates/" + newValue.en + ".json", {
         method: "GET",
       }).then(resp => resp.json()).then(res => {
-        for (let i in res) {
-          for (let j in res[i]) {
-            console.log("i=" + i + "j=" + j)
-            this.unit[i][j].value = res[i][j]
-            this.unit[i][j].isShow = true
+        this.unit = res
+        for (let i in this.unit) {
+          this.template[i].show = false
+          for (let j in this.unit[i]) {
+            this.template[i][j].isShow = true
           }
         }
       })
@@ -70,6 +71,9 @@ export default {
   },
   computed: {},
   methods: {
+    fetchHelpInfo() {
+
+    },
     outputMethod() {
       if (this.tmplSelect === null) {
         alert("还没有数据！")
@@ -81,36 +85,35 @@ export default {
       for (let ee in raw) {
         console.log(ee)
         if (ee in {"core":{}, "graphics":{}, "attack":{}, "movement":{}}) {
-          result += "[" + raw[ee].sectionKey + "]\n"
+          result += "[" + this.template[ee].sectionKey + "]\n"
           for (let ff in raw[ee]) {
-            if (typeof (raw[ee][ff]) == 'object' && raw[ee][ff].isShow) {
-              if (raw[ee][ff].type === "file (image)") {
-                this.outZip.file(raw[ee].sectionKey + raw[ee][ff].key + '.png', raw[ee][ff].value.substring(raw[ee][ff].value.indexOf(',')+1), {base64: true})
-                result += raw[ee][ff].key + ":" + raw[ee].sectionKey + raw[ee][ff].key + '.png\n'
+            if (this.template[ee][ff].isShow) {
+              if (this.template[ee][ff].type === "file (image)") {
+                this.outZip.file(this.template[ee].sectionKey + ff + '.png', raw[ee][ff].substring(raw[ee][ff].indexOf(',')+1), {base64: true})
+                result += ff + ":" + this.template[ee].sectionKey + ff + '.png\n'
               }
               else {
-                result += raw[ee][ff].key + ":" + raw[ee][ff].value + "\n"
+                result += ff + ":" + raw[ee][ff] + "\n"
               }
             }
           }
         }
       }
       this.output = result
-      this.outZip.file(this.unit.core.name.value + '.ini', result)
+      this.outZip.file(this.unit.core.name + '.ini', result)
       this.outZip.generateAsync({type: "blob"})
       .then(function (content) {
         saveAs(content, 'mod.zip')
       })
     },
     base64encrypt(e, f) {
-      //console.log(e.target.files[0])
-      console.log(JSON.parse(JSON.stringify(e)))
-      console.log(JSON.parse(JSON.stringify(f)))
       const reader = new FileReader()
-      reader.readAsDataURL(document.getElementById(e.sectionKey + f.key).files[0])
-      reader.onload = function () {
-        f.value = this.result
+      reader.readAsDataURL(document.getElementById(this.template[e].sectionKey + f).files[0])
+      const outThis = this;
+      reader.onload = function() {
+        outThis.unit[e][f] = this.result
       }
+
     },
     pr() {
       console.log(toRaw(this.unit))
@@ -126,7 +129,7 @@ export default {
     fetch("/templates/tmpl.json", {
       method: "GET",
     }).then(resp => resp.json()).then(res => {
-      this.unit = res
+      this.template = res
     })
     this.outZip = new JSZip()
   },
