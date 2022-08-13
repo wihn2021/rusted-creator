@@ -7,6 +7,7 @@ const TurretTmpl = {
     "warmup": 0,
     "canAttackFlyingUnits": true,
     "canAttackLandUnits":   false,
-    "canAttackUnderwaterUnits": false
+    "canAttackUnderwaterUnits": false,
+    "projectile": 0
 }
 export {TurretTmpl}
