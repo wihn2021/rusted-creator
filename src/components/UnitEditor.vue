@@ -69,11 +69,7 @@ export default {
       })
     })
   },
-  computed: {},
   methods: {
-    fetchHelpInfo() {
-
-    },
     outputMethod() {
       if (this.tmplSelect === null) {
         alert("还没有数据！")
@@ -83,7 +79,6 @@ export default {
       let result = ""
       let raw = toRaw(this.unit)
       for (let ee in raw) {
-        console.log(ee)
         if (ee in {"core":{}, "graphics":{}, "attack":{}, "movement":{}}) {
           result += "[" + this.template[ee].sectionKey + "]\n"
           for (let ff in raw[ee]) {
@@ -113,13 +108,6 @@ export default {
       reader.onload = function() {
         outThis.unit[e][f] = this.result
       }
-
-    },
-    pr() {
-      console.log(toRaw(this.unit))
-    },
-    hide(e) {
-      e.isShow = false
     },
   },
   mounted() {
