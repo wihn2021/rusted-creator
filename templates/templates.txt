@@ -1,1 +1,1 @@
-[{"en":"scout","cn":"侦察者"},{"en":"Experiemental_carrier","cn":"航空母舰"}]
+[{"en":"tank","cn":"小坦"},{"en":"Experiemental_carrier","cn":"航空母舰"}]

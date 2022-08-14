@@ -6,7 +6,7 @@
       "key": "name",
       "trans": "名字",
       "des": "该单位可以创建的单位名列表。可以是建筑物或单位。",
-      "type": "string(s)",
+      "type": "string",
       "isNecessary": false,
       "isShow": false,
       "value": null

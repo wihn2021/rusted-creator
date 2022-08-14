@@ -1,0 +1,70 @@
+{
+    "core": {
+        "name": "c_tank",
+        "displayLocaleKey": "tank",
+        "overrideAndReplace": "tank",
+        "class": "CustomUnitMetadata",
+        "price": 350,
+        "maxHp": 210,
+        "mass": 3000,
+        "techLevel": 1,
+        "buildSpeed": 0.0020,
+        "radius": 11,
+        "displayRadius": 11,
+        "isBio": false,
+        "softCollisionOnAll": 0
+    },
+    "graphics": {
+        "total_frames": 3,
+        "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAeCAYAAABqpJ3BAAAETUlEQVR4nN2X309bZRjHP+elLchKu5IBDQXGKGYLbjINxADhvG2NbjPGC+HCLF74B/gveOWd1/4B3riYuN14IUPnaXsK7YiLgmEx0ZBsJmyDbOLGgEJ/edG09PxY1nNIdPokTdrv+/0873m+eXPOKfwfanhktBIKUf88y+f3B+qe4ZHRyovAKzPvz1S05DXGJmbrxlu5q4xNzPL9t1cVgLfema3UtL29x1AR3F6ZJxGfIZtbJJ9/4IpvawtDBfL7LvnWMJ5sdhGAzq6wZeJXRscNaVQ9Vd/tlXmy2UUmJ6fQktdc8ZMTU2Rz7vdHAYFyaFhdXgIgv9dmaVbTah4AFKgF4IbPZheZnJhyzU9OTCHi8URd6I2cZHV5iaHT57i3freu31u/y9Dpc6wuL9EbOVnX4/EEjQE45c0BOOWz2UVEUtMMk/aEI/XvkcgAkciA7RpAUtNoDMApbw7AKY8CnnK5bNBaWjz1KWsH0JBaQ5XLZcwBOOGTmkY8kWBu7oorPh5PIFQpbRebKVVKzAE4KbsAnFRS0/BkMhnLwsqfOuVwmXJ79eLErkA8EIx2qgZfJpNBlZIbN752xatSoqfTrvcvl8t4hDg8hL9v3qKYL7L5ZBM+NHX9DH59ehNPm4c3ut6tNhYKjQE45c0BOOVVKRHT08YjFOoP4Tvrs6TiO+sj1B8yaNPTksYAnPLmAJzymUwGsbCgG8R8Po9P2DQQPvL5vEFbWNAxB+CEtwvACS+EgjDfx3bu76CUTPc2QCkp7NzfMauYA3DC2wXghJ+elnikjDE392VdLHlL9LT0ELwZZHtvG4COlzpoa2lj27ttaCBljHQ6ZdCc8HYBOOEXFnQ8qdThbezl7rFqCk/+YuO3dbY3nwLQ2t1BdzjCqf7jhgaplEYslqgH4JQ3B+CUBwVhUvB6vBQOCjza3KAjEKAjEODR5gaFg4LZWh/CLZ9KaUgZc81LGUNIGTeIhWKB451d+AMBhoZHGBoewR8IUCju2zSIWzQnvF0ATvhUSkPouvVBAnDM76dUKlIqFTnm99PV3Wfx6Hradohm+WexzfKA8Qg1vgGeH4/RN3iGvsEznB+P2XpqQ7jlzQE45aWMI6RqvI0posX2z0VnVxhFtBg0M+uUrw3hltf1NEok0lvZ3b1nAd5+72PD7++++dziaW/vRaox5q5fsaw1w1+6eJm0nmZ3d93l/pHDAbY+rYqDXwzyeO2OxQwQjA5y56PqWuiT6gAAR+FrAbjhL128jEdVY1w3JRiNj/Hwj4cG7cTACYumqjF0PWXZqFkeIH0EPq2nEHYX0GzpegpVjbnmj8LWSni91henZsvr9ZHLZV3zuVyWo+5veRJHx6MEe4IoyuELlaIoBHuCRMejz236T/MKQChEpVKBwgH4WuH1D95k7cc1S+OfvvqBg33w+kBRYGvr3+cVAJm4UPnl5/nnptNYr752gbQ2/0Lw/+n6GzAT8IM8lB1XAAAAAElFTkSuQmCC",
+        "image_wreak": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAeCAYAAAAl+Z4RAAACFklEQVR4nK2VzW7qMBCFv4SIMBUKQc2CSFFJF37/B2JRQFl0gfiRaBoExncBdmMCvUj3jjSSPT5nckYeT+B/WRzHBrD+yMwV51tRFAYweZ6bPM/d2p7bWJZlBjBXPAARQFVVAAyHQy+xiHhfG4/HrFYrhwcIn6zw71aWpZMuIg9dKWUAc8X/KJjP5yilvKRpmpKmqduPRiPaeICghTcAeZ7/qnQ4HDKbzew2cAre3t6erdbDRzawXC7d4WazIY5jer0eAFprDocD4/GYW7xVYACUUqzXa5qmQUTo9/v0+31EhKZpWK/XHSUhwHQ6dYEkSRgMBh3gYDAgSRKqqkIp5TghYBaLBUopqqrieDwSht32CMOQ4/Ho9ovFwivB2dfXV4f821n4/v7uBYwxiAhaa+q6pq5rtNaICFEUURQFs9kMy4s+Pj4c2TbN4XBgs9lwOp0uoCgiSRKvqSyvU0Kv10Nr7cgAp9MJrfXdssKyLL2A1pqXlxcAsiwjyzKXxHbhlRMARLanby2OY87ns1snSeLO2pyoTdput67Odmu/vr6y3++fKyEIgs5ggcsjsk0E7vkT8GAG3j7t1gv0v2cTTCYTAHa7Hd/f33flioibCZ+fn/dLgMtMEBHP782JsizdQOmouLU0Tdlut10Fl0KCDuEZC4Lg/lQuisJLam+mKIpuktbauw0R6SS9cxM/fPvXedav+H+3P87z4fegngFuAAAAAElFTkSuQmCC",
+        "image_turret": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAoCAYAAADHVmuAAAABxUlEQVR4nO2T304TQRSHv5n9062lbbahEbfYCq1WgzHERLnhihi9wvggPg5Pwo0Jt8bE6KUhIRpA0S1UUjYRLVvs7HjRsOx2W3wBflczZ775nXPmZGBMi622Xmzd1+NxmdwsNO9pISSd73s07z7QU0EhBFpHKKXQOmOa1vLjFb32Yv3q1ABKKc4HYcYgA0ZRNDFtBpxWWwacpgwohEDK7H15y6tXUgEpsSwrCx52Dk5SjtLAMCeA4wHDMPiys301aFmmjqIB+Rs2pXI51b64WMzOVvXN2h0eLq/Eh1ubGwTBiBEArov26k/wag0AKtW5FJxz5usCoFAoaqUUecfGzuWQhkXY7zMYnKP1X87CgTBH9yKa7aXYMem6tbnBWQjSddG2/SfT5cnxUbx2XbQESNY3rucvXwNgJoP7u9t0D31KM0UQgtVnry7fUQ2LhP3fABx3jyiWSphOHu92k/dv38SgaZinoBUAhZkiC6028402AMPh8BIcPehn7fhllh495fRXDwDHNvjZ/cHX3XcEASIxwiEd/xu9XsDOpw90fJ/VtfX4NB7hxXQAvFqDSnUuO8JJcOfgYwxNlOuiXZf/fOprXQv4B+hjmWxcf1zDAAAAAElFTkSuQmCC",
+        "imageScale": 0.8,
+        "image_shadow": "AUTO",
+        "shadowOffsetX": 1,
+        "shadowOffsetY": 1,
+        "dustEffect": true
+    },
+    "attack": {
+        "canAttack": true,
+        "canAttackFlyingUnits": false,
+        "canAttackLandUnits": true,
+        "canAttackUnderwaterUnits": false,
+        "turretSize": 20,
+        "turretTurnSpeed": 4,
+        "maxAttackRange": 130,
+        "shootDelay": 75
+    },
+    "turret": [
+        {
+            "x": 0,
+            "y": 0,
+            "projectile": 0,
+            "turnSpeedAcceleration": 1.0,
+            "shoot_sound": "tank_firing",
+            "shoot_sound_vol": 0.3,
+            "shoot_flame": "small",
+            "canShoot": true,
+            "recoilOffset": -2
+        }
+    ],
+    "projectile": [
+        {
+            "directDamage": 25,
+            "life": 60,
+            "speed": 5,
+            "frame": 1,
+            "drawSize": 1
+        }
+    ],
+    "movement": {
+        "movementType": "LAND",
+        "moveSpeed": 1.1,
+        "moveAccelerationSpeed": 0.07,
+        "moveDecelerationSpeed": 0.17,
+        "maxTurnSpeed": 4.1,
+        "turnAcceleration": 0.25,
+        "moveSlidingMode": false,
+        "moveIgnoringBody": false
+    }
+}
