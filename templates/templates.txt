@@ -1,1 +1,5 @@
-[{"en":"scout","cn":"侦察者"},{"en":"Experiemental_carrier","cn":"航空母舰"}]
+[{"en":"tank","cn":"小坦"},
+{"en":"Experiemental_carrier","cn":"航空母舰"},
+{"en":"运输机 by SG4S终结者", "cn":"运输机 by SG4S终结者"},
+{"en":"mechGun", "cn": "普通机甲"}
+]
