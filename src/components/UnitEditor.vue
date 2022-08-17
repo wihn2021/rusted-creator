@@ -14,9 +14,9 @@
       </button>
       <div v-if="template[ee].show">
         <template v-if="ee==='turret'">
-          <div v-for="t in rangeArray(unit.turret)" :key="t">
-            <h2>turret{{ t }}</h2>
-            <button @click="unit.turret.splice(t,1)">删除炮塔</button>
+          <div v-for="t in rangeArray(unit[ee])" :key="t">
+            <h2>{{ ee }}{{ t }}</h2>
+            <button @click="unit[ee].splice(t,1)">删除{{ template[ee].sectionName }}</button>
             <!---
             <div style="position: static; text-align: center; display: block">
               <div style="text-align: center;position: center"><img :src="this.unit.graphics.image" style="margin: 0 auto"></div>
@@ -76,6 +76,66 @@
           </div>
           <button @click="newProjectile">新建炮弹</button>
         </template>
+        <template v-else-if="ee==='leg'">
+          <div v-for="t in rangeArray(unit[ee])" :key="t">
+            <h2>{{ ee }}{{ t }}</h2>
+            <button @click="unit[ee].splice(t,1)">删除腿脚</button>
+            <!---
+            <div style="position: static; text-align: center; display: block">
+              <div style="text-align: center;position: center"><img :src="this.unit.graphics.image" style="margin: 0 auto"></div>
+              <div style="text-align: center;position: center"><img :src="t.image" :style="turretStyle"></div>
+            </div>
+            --->
+            <div v-for="ff in Object.keys(unit[ee][t])" :key="ff">
+              <span :title="template[ee][ff].des">{{ template[ee][ff].trans }}</span>
+              <input type="checkbox" v-if="template[ee][ff].type==='bool'" v-model="unit[ee][t][ff]">
+              <input type="checkbox" v-if="template[ee][ff].type==='LogicBoolean'" v-model="unit[ee][t][ff]">
+              <input type="text" v-if="template[ee][ff].type==='string'" v-model="unit[ee][t][ff]">
+              <input type="text" v-if="template[ee][ff].type==='int'" v-model.number="unit[ee][t][ff]">
+              <input type="text" v-if="template[ee][ff].type==='float'" v-model.number="unit[ee][t][ff]">
+              <input type="text" v-if="template[ee][ff].type==='time'" v-model="unit[ee][t][ff]">
+              <div class="image file" v-if="template[ee][ff].type==='file (image)'">
+                <img :src="unit[ee][t][ff]" alt="">
+                <input type="file" accept="image/png" @change="base64encrypt(ee, ff)"
+                       :id="template[ee].sectionKey+ t + ff">
+              </div>
+              <select v-if="template[ee][ff].type==='enum'" v-model="unit[ee][t][ff]">
+                <option v-for="g in template[ee][ff].enum" :key="g">{{ g }}</option>
+              </select>
+            </div>
+          </div>
+          <button @click="newLeg">新建腿脚</button>
+        </template>
+        <template v-else-if="ee==='effect'">
+          <div v-for="t in rangeArray(unit[ee])" :key="t">
+            <h2>{{ ee }}{{ t }}</h2>
+            <button @click="unit[ee].splice(t,1)">删除效果</button>
+            <!---
+            <div style="position: static; text-align: center; display: block">
+              <div style="text-align: center;position: center"><img :src="this.unit.graphics.image" style="margin: 0 auto"></div>
+              <div style="text-align: center;position: center"><img :src="t.image" :style="turretStyle"></div>
+            </div>
+            --->
+            <div v-for="ff in Object.keys(unit[ee][t])" :key="ff">
+              <span :title="template[ee][ff].des">{{ template[ee][ff].trans }}</span>
+              <input type="checkbox" v-if="template[ee][ff].type==='bool'" v-model="unit[ee][t][ff]">
+              <input type="checkbox" v-if="template[ee][ff].type==='LogicBoolean'" v-model="unit[ee][t][ff]">
+              <input type="text" v-if="template[ee][ff].type==='string'" v-model="unit[ee][t][ff]">
+              <input type="text" v-if="template[ee][ff].type==='int'" v-model.number="unit[ee][t][ff]">
+              <input type="text" v-if="template[ee][ff].type==='float'" v-model.number="unit[ee][t][ff]">
+              <input type="text" v-if="template[ee][ff].type==='time'" v-model="unit[ee][t][ff]">
+              <div class="image file" v-if="template[ee][ff].type==='file (image)'">
+                <img :src="unit[ee][t][ff]" alt="">
+                <input type="file" accept="image/png" @change="base64encrypt(ee, ff)"
+                       :id="template[ee].sectionKey+ t + ff">
+              </div>
+              <select v-if="template[ee][ff].type==='enum'" v-model="unit[ee][t][ff]">
+                <option v-for="g in template[ee][ff].enum" :key="g">{{ g }}</option>
+              </select>
+            </div>
+          </div>
+          <button @click="void(0)">新建效果</button>
+        </template>
         <template v-else>
           <template v-for="ff in Object.keys(unit[ee])" :key="ff">
             <div v-if="template[ee][ff].isNecessary || template[ee][ff].isShow" class="unitdata">
@@ -111,8 +171,9 @@
 import {toRaw} from "vue";
 import JSZip from "jszip";
 import {saveAs} from "file-saver";
-import {TurretTmpl} from "@/components/TurretTmpl";
-import {ProjectileTmpl} from "@/components/ProjectileTmpl";
+import {turretTmpl} from "@/components/TurretTmpl";
+import {projectileTmpl} from "@/components/ProjectileTmpl";
+import {legTmpl} from "@/components/LegTmpl";
 
 export default {
   name: "UnitEditor",
@@ -142,9 +203,10 @@ export default {
         this.unit = res
         for (let i in this.unit) {
           // stop using typical methods to deal with turrets here
-          if (i === 'turret' || i==='projectile') continue
+          if (i === 'turret' || i==='projectile' || i==='leg' || i==='effect') continue
           this.template[i].show = false
           for (let j in this.unit[i]) {
+            console.log(i+j)
             this.template[i][j].isShow = true
           }
         }
@@ -173,13 +235,14 @@ export default {
               }
             }
           }
-        } else if (ee in {"turret": {}, "projectile": {}}) {
+        } else if (ee in {"turret": {}, "projectile": {}, "leg": {}}) {
           for (let i = 0; i < raw[ee].length; i++) {
             result += "[" + ee + "_" + i + "]\n"
             for (let ent in raw[ee][i]) {
-              if (this.template[ee][ent].type === "file (image)") {
-                this.outZip.file(ee + i + '.png', raw[ee][i][ent].substring(raw[ee][i][ent].indexOf(',') + 1), {base64: true})
-                result += ent + ":" + ee + i + '.png\n'
+              if (this.template[ee][ent].type === "file (image)" && raw[ee][i][ent].startsWith("data")) {
+                let filePth = ee + i + this.template[ee][ent].key + '.png'
+                this.outZip.file(filePth, raw[ee][i][ent].substring(raw[ee][i][ent].indexOf(',') + 1), {base64: true})
+                result += ent + ":" + filePth + '\n'
               } else {
                 result += ent + ":" + raw[ee][i][ent] + "\n"
               }
@@ -203,10 +266,13 @@ export default {
       }
     },
     newTurret() {
-      this.unit.turret.push(TurretTmpl)
+      this.unit.turret.push(turretTmpl)
     },
     newProjectile() {
-      this.unit.projectile.push(ProjectileTmpl)
+      this.unit.projectile.push(projectileTmpl)
+    },
+    newLeg() {
+      this.unit.leg.push(legTmpl)
     },
     rangeArray(l) {
       let res = []

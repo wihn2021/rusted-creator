@@ -1,0 +1,39 @@
+{
+  "core": {
+    "name": "运输机",
+    "class": "CustomUnitMetadata",
+    "price": 550,
+    "maxHp": 1000,
+    "mass": 6000,
+    "techLevel": 1,
+    "buildSpeed": 0.005,
+    "radius": 18,
+    "displayRadius": 18,
+    "isBio": false,
+    "softCollisionOnAll": 0,
+    "maxTransportingUnits":6
+  },
+  "graphics": {
+    "total_frames": 3,
+    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAMAAABADLOjAAAAS1BMVEUAAAAMDAwYGBg0NDQoKChERERQUFC4uLhcXFxoaGx4eHiMjIwgVCCgoKQnaCcYRBgKIAo8jDxJoElZsFkOMA5qxGoxfDHMzMwCIAJOfl2RAAAAAXRSTlMAQObYZgAAAktJREFUSMeV1duC6iAMBVBzAaEyoK1i//9LZwc66jlehuFJ62qaJgF3u1eLiHbDi1h4mJM6P85JvHf6Jy00ngj0YCoIjZroqHa0Nz6sdViTem95j6VCQgRNNKyD6aFUCPWLwSGVIY36TWEoNmbP9GHTn0cRxYP2AVoZvbfv/4lH3HW8aXnk+EiJHt+PrHzxq2sUR+7TRdlupxsOk+diet/1kUK4D6M1gE50x5PXgnS6Zmjv7tFphl7oB8cwiSYUI+4n2zx0Zn3gdIGutOUcQ3Se84kJnbG5Ohf2fOeWBXK31fFkWiRGRSbQGrxFd9JMbprFdRyRN7SLV50Q3bTbOFbT9vZoiOEQPdcqqCAHFcsk+htnbe3yoi507da5a+m66ORN43c831p3CF6kxRZda61F0ctNp8T4FdOOkQwxQl99/4aKUa25nBmF14C8j+dUCymOgGB42kOjtGLbilKGLoUZiSFv3HwsOVHOqm3zTQfo0MtTcq1UhVScvQ+jUgjBCRFqasJbJtsMr3mGtvKgjZYV7rGa01y3ufvn4G33q8dbac05JeP9sfR2l6E0imf/8I/73rSi5OAJXEV+0UEXNKjyiFaUVZaukYj7ZRvbbLtFKw1gq4y/HvCiNILXXNbwFaGB11TXjzidMrZxkGpHfslzesvXFcGsczgzL3aSJOiEqy//T21STpeETR/cgr2JC0u29dxNskm0HYf24cNCto/Za1/PGo1BJw92fJHMLZ6dtW3Ri/9IrC0K9Ha14eeO0uO48Uwvrr7v0WvwDRYbGhslz7SZAAAAAElFTkSuQmCC",
+    "image_wreak":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAMAAABADLOjAAAAkFBMVEUAAAACAgIKCgodHR0VFRUoKCgwMDAWFhYSEhIhISE4ODhCQkJMTExZWVkbGxsMDAwGBgYFBQUHBwdoaGgDAwMODg4UFBR3d3cmJiYcHBwLCwslJSUaGhoICAgtLS0jIyMfHx89PT0PDw8vLy9GRkaFhYVDQ0M8PDwZGRkTExMJCQlOTk4gICApKSkEBARbW1suYC3NAAAAAXRSTlMAQObYZgAAAnxJREFUSMelletS20AMhSNpV7Flx84GvHhjoClLUyC0vP/bVTJhmpmaxEz1Jxd/ls8eXbxYTAYALGYHIM2nwXmenxyIv0jPlgLov0QvAdxsugCYbyEcY6Z/zKUnhzDPEWD2ALNpMXrWOUHtq8SrlFm0lrGW2bmVXh3pC77oZT2irKRx1obg4azmka5W7TpsjKYzOHgVYPSVFNfQ6XfpPvXR3IBo9I14UxKgL9rp9gIopGaM+oB3GpUu255O8Y+GAN93bU0uqRnVTc2EAFvslo2c4jCMJVYV1a32NQ6CoJVxmmQbsQzsJfzVDqNCg6W6q40mqu47/VdpJ6Xj9q6gj45UjqgtDG66b+yUbnbfu1qzG+25w7YvIh31roTdw4NI5e/lnjFn4t3jpndkSipuym7pb5ujePjBHNvC6EqasFe63D2SjHR0dcld2bQiR1qPX0Y2mlzIOUfH1c8jnRL2TLz02pLvtFAg+6WOQc5D3KKX2onqDtuUIzjnS/EfuvUj2FhBGpSOEdF5QTELQxwSDINzOnsnJQoAccgZMoEjj6oCdRVqCkyaIad/ZjoMe6VRt5SW0VTpPeY57BX+ZC84FiaXhyElw+nsqgBWa5w+++npecTPzr3SozOKv6wTODq7DUcxilPGtH65SDup6u6Q6RVTCpvoz4+xDdovf+heIaGLzYWZD0MMRSow2xH9JTjJEOGqCtmqFFTNpxLC7+vnbLVgy0060Op6CGHSO4pPuJG3FKFH/2abJA1jTJRH9wJRty5sen3vDzqbmtu9B0y8xkT4tlrpFXX5ADbHqKvWAiaEaz/xmMZqtLfHA43wZIlOGwj3cPIGmvGiWvx3/AESNCP/4wAFJgAAAABJRU5ErkJggg==",
+    "imageScale": 0.8,
+    "image_shadow": "AUTO",
+    "shadowOffsetX": 1,
+    "shadowOffsetY": 1,
+    "dustEffect": true
+  },
+  "attack": {
+    "canAttack": false
+  },
+  "movement": {
+    "movementType": "LAND",
+    "moveSpeed": 2,
+    "moveAccelerationSpeed": 0.1,
+    "moveDecelerationSpeed": 0.15,
+    "maxTurnSpeed": 2,
+    "turnAcceleration": 0.25,
+    "moveSlidingMode": false,
+    "moveIgnoringBody": false
+  }
+}

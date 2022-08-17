@@ -2635,8 +2635,8 @@
       "isShow": false,
       "value": null
     },
-    "chargeEffectImage:\n": {
-      "key": "chargeEffectImage:\n",
+    "chargeEffectImage": {
+      "key": "chargeEffectImage",
       "trans": "充能效果图像",
       "des": "预热时的充能效果。默认是由小变大。",
       "type": "file (image)",
@@ -4159,7 +4159,7 @@
       "key": "image_end",
       "trans": "末端图像",
       "des": "末端图像，相当于脚。",
-      "type": "image",
+      "type": "file (image)",
       "isNecessary": false,
       "isShow": false,
       "value": null
@@ -4168,7 +4168,7 @@
       "key": "image_end_shadow",
       "trans": "末端图像阴影",
       "des": "末端图像阴影。",
-      "type": "image",
+      "type": "file (image)",
       "isNecessary": false,
       "isShow": false,
       "value": null
@@ -4186,7 +4186,7 @@
       "key": "image_foot",
       "trans": "脚图像",
       "des": "脚图像，与image_end相同",
-      "type": "image",
+      "type": "file (image)",
       "isNecessary": false,
       "isShow": false,
       "value": null
@@ -4195,7 +4195,7 @@
       "key": "image_foot_shadow",
       "trans": "脚图像阴影",
       "des": "脚图像阴影。",
-      "type": "image",
+      "type": "file (image)",
       "isNecessary": false,
       "isShow": false,
       "value": null
@@ -4204,7 +4204,7 @@
       "key": "image_middle",
       "trans": "中部图像",
       "des": "中部图像，相当于腿。",
-      "type": "image",
+      "type": "file (image)",
       "isNecessary": false,
       "isShow": false,
       "value": null
@@ -4213,7 +4213,7 @@
       "key": "image_leg",
       "trans": "腿图像",
       "des": "腿图像，与image_middle相同",
-      "type": "image",
+      "type": "file (image)",
       "isNecessary": false,
       "isShow": false,
       "value": null
@@ -4595,6 +4595,15 @@
       "isShow": false,
       "value": null
     },
+    "color": {
+      "key": "color",
+      "trans": "颜色",
+      "des": "NULL",
+      "type": "string",
+      "isNecessary": false,
+      "isShow": false,
+      "value": null
+    },
     "createWhenOffscreen": {
       "key": "createWhenOffscreen",
       "trans": "可创建于画面之外",
@@ -4964,11 +4973,11 @@
       "isShow": false,
       "value": null
     },
-    "Image": {
-      "key": "Image",
+    "image": {
+      "key": "image",
       "trans": "图像",
       "des": "要使用的自定义图像文件。不能与stripIndex一起使用。",
-      "type": "image",
+      "type": "file (image)",
       "isNecessary": false,
       "isShow": false,
       "value": null
@@ -5077,6 +5086,15 @@
       "trans": "动画帧随机速度",
       "des": "按此值随机更改动画速度。",
       "type": "time",
+      "isNecessary": false,
+      "isShow": false,
+      "value": null
+    },
+    "drawUnderUnits": {
+      "key": "drawUnderUnits",
+      "trans": "画在单位以下",
+      "des": "设置淡入效果时间，透明度从100%淡出到%0。把alpha设置为高于1可以延长淡出。",
+      "type": "bool",
       "isNecessary": false,
       "isShow": false,
       "value": null

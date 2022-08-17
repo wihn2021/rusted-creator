@@ -1,4 +1,4 @@
-const ProjectileTmpl = {
+const projectileTmpl = {
     "life": 150,
     "speed": 5,
     "drawType": 2,
@@ -14,4 +14,4 @@ const ProjectileTmpl = {
     "lightColor": "#ffe92b",
     "lightSize": 0.6
 }
-export {ProjectileTmpl}
+export {projectileTmpl}
