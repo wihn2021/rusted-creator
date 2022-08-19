@@ -1,4 +1,5 @@
 <template>
+  <button @click="debugg" v-if="false">debug</button>
   <div id="navi">
     <div>
       <span>选择一个模板</span>
@@ -7,12 +8,18 @@
       </select>
       <button @click="newUnit">新建单位</button>
     </div>
+    <div id="project buttons">
+      <input type="file" style="display: none" id="projectFile" @change="loadProject">
+      <button @click="clickLoadProject">载入工程</button>
+      <button @click="saveProject">保存工程</button>
+    </div>
     <span>选择一个单位来进行编辑：</span>
     <select v-model="unitSelect">
-      <option v-for="e in Object.keys(units)" :value="e" :key="'unit'+e">
+      <option v-for="e in Object.keys(project.units)" :value="e" :key="'unit'+e">
         {{ e }}
       </option>
     </select>
+    <button @click="showTurret">刷新</button>
     <button @click="saveUnit">保存单位</button>
     <button @click="deleteUnit">删除单位</button>
     <button @click="allModOutput">导出zip</button>
@@ -30,23 +37,20 @@
             <div v-for="t in rangeArray(unit[ee])" :key="t">
               <h2>{{ ee }}{{ t }}</h2>
               <button @click="unit[ee].splice(t,1)">删除{{ template[ee].sectionName }}</button>
-              <!---
-              <div style="position: static; text-align: center; display: block">
-                <div style="text-align: center;position: center"><img :src="this.unit.graphics.image" style="margin: 0 auto"></div>
-                <div style="text-align: center;position: center"><img :src="t.image" :style="turretStyle"></div>
+              <div :id="turret + t">
+                <canvas :id="'turretcanvas' + t"></canvas>
               </div>
-              --->
               <div v-for="ff in Object.keys(unit.turret[t])" :key="ff">
                 <span :title="template.turret[ff].des">{{ template.turret[ff].trans }}</span>
                 <input type="checkbox" v-if="template[ee][ff].type==='bool'" v-model="unit.turret[t][ff]">
                 <input type="checkbox" v-if="template[ee][ff].type==='LogicBoolean'" v-model="unit.turret[t][ff]">
                 <input type="text" v-if="template[ee][ff].type==='string'" v-model="unit.turret[t][ff]">
                 <input type="text" v-if="template[ee][ff].type==='int'" v-model.number="unit.turret[t][ff]">
-                <input type="text" v-if="template[ee][ff].type==='float'" v-model.number="unit.turret[t][ff]">
+                <input type="text" v-if="template[ee][ff].type==='float'" v-model.number="unit.turret[t][ff]" @change="showTurret">
                 <input type="text" v-if="template[ee][ff].type==='time'" v-model="unit.turret[t][ff]">
                 <div class="image file" v-if="template[ee][ff].type==='file (image)'">
                   <img :src="unit.turret[t][ff]" alt="">
-                  <input type="file" accept="image/png" @change="base64encrypt(ee, ff)"
+                  <input type="file" accept="image/png" @change="base64encrypt(ee, t, ff)"
                          :id="template[ee].sectionKey+ t + ff">
                 </div>
                 <select v-if="template[ee][ff].type==='enum'" v-model="unit.turret[t][ff]">
@@ -79,7 +83,7 @@
                 <input type="text" v-if="template[ee][ff].type==='time'" v-model="unit.projectile[t][ff]">
                 <div class="image file" v-if="template[ee][ff].type==='file (image)'">
                   <img :src="unit.projectile[t][ff]" alt="">
-                  <input type="file" accept="image/png" @change="base64encrypt(ee, ff)"
+                  <input type="file" accept="image/png" @change="base64encrypt(ee, t, ff)"
                          :id="template[ee].sectionKey+ t + ff">
                 </div>
                 <select v-if="template[ee][ff].type==='enum'" v-model="unit.projectile[t][ff]">
@@ -112,7 +116,7 @@
                 <input type="text" v-if="template[ee][ff].type==='time'" v-model="unit[ee][t][ff]">
                 <div class="image file" v-if="template[ee][ff].type==='file (image)'">
                   <img :src="unit[ee][t][ff]" alt="">
-                  <input type="file" accept="image/png" @change="base64encrypt(ee, ff)"
+                  <input type="file" accept="image/png" @change="base64encrypt(ee, t, ff)"
                          :id="template[ee].sectionKey+ t + ff">
                 </div>
                 <select v-if="template[ee][ff].type==='enum'" v-model="unit[ee][t][ff]">
@@ -142,7 +146,7 @@
                 <input type="text" v-if="template[ee][ff].type==='time'" v-model="unit[ee][t][ff]">
                 <div class="image file" v-if="template[ee][ff].type==='file (image)'">
                   <img :src="unit[ee][t][ff]" alt="">
-                  <input type="file" accept="image/png" @change="base64encrypt(ee, ff)"
+                  <input type="file" accept="image/png" @change="base64encrypt(ee, t, ff)"
                          :id="template[ee].sectionKey+ t + ff">
                 </div>
                 <select v-if="template[ee][ff].type==='enum'" v-model="unit[ee][t][ff]">
@@ -166,7 +170,7 @@
                 <input type="text" v-if="template[ee][ff].type==='time'" v-model="unit[ee][ff]">
                 <div class="image file" v-if="template[ee][ff].type==='file (image)'">
                   <img :src="unit[ee][ff]" alt="">
-                  <input type="file" accept="image/png" @change="base64encrypt(ee, ff)"
+                  <input type="file" accept="image/png" @change="base64encrypt(ee, null, ff)"
                          :id="template[ee].sectionKey + ff">
                 </div>
                 <select v-if="template[ee][ff].type==='enum'" v-model="unit[ee][ff]">
@@ -197,13 +201,12 @@ export default {
   data() {
     return {
       templates: null,
+      project:{units: {}},
       tmplSelect: null,
       unitSelect: null,
       unit: {},
       template: null,
-      output: null,
-      outZip: new JSZip(),
-      units: {}
+      interval: null
     }
   },
   computed: {
@@ -216,7 +219,9 @@ export default {
   },
   created() {
     this.$watch("unitSelect", (newValue) => {
-      this.unit = this.units[newValue]
+      this.unit = this.project.units[newValue]
+      this.interval = setInterval(() => {this.showTurret()}, 100)
+      //this.showTurret()
     })
     /*
     this.$watch('tmplSelect', (newValue) => {
@@ -236,15 +241,44 @@ export default {
       })
     })*/
   },
+  watch: {
+    "this.unit.turret": {
+      handler() {
+        this.showTurret()
+      },
+      deep: true
+    },
+  },
   methods: {
+    debugg() {
+      console.log(this.$data)
+    },
+    showTurret() {
+      for (let tur in Object.keys(this.unit.turret)) {
+        let bgImg = new Image()
+        bgImg.src = this.unit.graphics.image
+        let turImg = new Image()
+        turImg.src = this.unit.turret[tur].image
+        let c = document.getElementById("turretcanvas" + tur)
+        c.width = bgImg.width
+        c.height = bgImg.height
+        let ctx = c.getContext("2d")
+        ctx.drawImage(bgImg,0,0)
+        ctx.drawImage(turImg, bgImg.width/2 - turImg.width/2 + this.unit.turret[tur].x, bgImg.height/2 - turImg.height/2 - this.unit.turret[tur].y)
+      }
+    },
     newUnit() {
+      if (this.tmplSelect === null) {
+        alert("请先选择一个模板")
+        return
+      }
       let name = prompt("输入单位名称（不要与已有的重复！）")
       if (name) {
         fetch("/templates/" + this.tmplSelect.en + ".json", {
           method: "GET",
         }).then(resp => resp.json()).then(res => {
-          this.units[name] = res
-          for (let i in this.unit) {
+          this.project.units[name] = res
+          /*for (let i in this.unit) {
             // stop using typical methods to deal with turrets here
             if (i === 'turret' || i === 'projectile' || i === 'leg' || i === 'effect') continue
             this.template[i].show = false
@@ -252,26 +286,41 @@ export default {
               console.log(i + j)
               this.template[i][j].isShow = true
             }
-          }
+          }*/
         })
       }
     },
+    clickLoadProject() {
+      document.getElementById("projectFile").click()
+    },
+    loadProject() {
+      const reader = new FileReader()
+      reader.readAsText(document.getElementById("projectFile").files[0])
+      const outThis = this;
+      reader.onload = function () {
+        outThis.project = JSON.parse(this.result)
+      }
+    },
+    saveProject() {
+      let f = new File([JSON.stringify(this.project)], "project.json", { type: "text/plain;charset=utf-8" })
+      saveAs(f)
+    },
     saveUnit() {
-      this.units[this.unitSelect]=this.unit
+      this.project.units[this.unitSelect]=this.unit
     },
     deleteUnit() {
       let res = confirm("确认删除" + this.unitSelect + "吗？")
       if (res) {
-        delete this.units[this.unitSelect]
+        delete this.project.units[this.unitSelect]
         this.unitSelect = null
       }
     },
     allModOutput() {
       let product = new JSZip()
-      for (let u in this.units) {
+      for (let u in this.project.units) {
         let result = ""
         let unitFolder = product.folder(u)
-        let raw = toRaw(this.units[u])
+        let raw = toRaw(this.project.units[u])
         for (let ee in raw) {
           if (ee in {"core": {}, "graphics": {}, "attack": {}, "movement": {}}) {
             result += "[" + this.template[ee].sectionKey + "]\n"
@@ -298,7 +347,7 @@ export default {
             }
           }
         }
-        unitFolder.file(this.units[u].core.name + '.ini', result)
+        unitFolder.file(this.project.units[u].core.name + '.ini', result)
       }
       product.generateAsync({type: "blob"})
           .then(function (content) {
@@ -348,12 +397,14 @@ export default {
             saveAs(content, 'mod.zip')
           })
     },
-    base64encrypt(e, f) {
+    base64encrypt(e, f, g) {
       const reader = new FileReader()
-      reader.readAsDataURL(document.getElementById(this.template[e].sectionKey + f).files[0])
+      reader.readAsDataURL(document.getElementById(f===null?(this.template[e].sectionKey+ g):(this.template[e].sectionKey+f+g)).files[0])
       const outThis = this;
       reader.onload = function () {
-        outThis.unit[e][f] = this.result
+        if (f===null) {outThis.unit[e][g] = this.result}
+        else {outThis.unit[e][f][g] = this.result}
+        this.showTurret()
       }
     },
     newTurret() {
@@ -382,7 +433,6 @@ export default {
     }).then(resp => resp.json()).then(res => {
       this.template = res
     })
-    this.outZip = new JSZip()
   },
 }
 </script>
