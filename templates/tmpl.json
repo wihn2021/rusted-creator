@@ -69,7 +69,7 @@
       "key": "buildSpeed",
       "trans": "建造速度",
       "des": "建造此单位需要的时间，填秒。以前的计算方式为：此处所填时间=1÷(60x你需要的秒)如果定义了工厂速率则需要乘以建造乘数。",
-      "type": "float / s",
+      "type": "string",
       "isNecessary": false,
       "isShow": false,
       "value": null
@@ -2351,7 +2351,7 @@
       "key": "idleSweepCondition",
       "trans": "空闲扫描条件",
       "des": "炮塔闲时扫描的条件，比如单位移动但没攻击时炮塔确实是闲置的，但这时可能不该旋转。",
-      "type": "logic boolean",
+      "type": "string",
       "isNecessary": false,
       "isShow": false,
       "value": null
@@ -3480,7 +3480,7 @@
       "key": "effectOnCreate",
       "trans": "创建时效果",
       "des": "创建时效果，会追随抛射体。",
-      "type": "effect ref list",
+      "type": "effect",
       "isNecessary": false,
       "isShow": false,
       "value": null

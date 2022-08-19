@@ -61,7 +61,7 @@
       "speed": 0,
       "targetSpeed": 8,
       "targetSpeedAcceleration": 1.5,
-      "effectOnCreate": "CUSTOM:projectileLight"
+      "effectOnCreate": 1
     }],
 "effect":[
   {
