@@ -60,10 +60,15 @@
       "key": "techLevel",
       "trans": "科技等级",
       "des": "设置单位的科技等级，共有3个级别，1级GUI显示为绿色，2、3级显示为黄色。",
-      "type": "int",
+      "type": "enum",
+      "enum": [
+        1,
+        2,
+        3
+      ],
       "isNecessary": false,
       "isShow": false,
-      "value": null
+      "value": 1
     },
     "buildSpeed": {
       "key": "buildSpeed",

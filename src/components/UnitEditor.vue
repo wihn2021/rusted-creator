@@ -1,5 +1,5 @@
 <template>
-  <button @click="debugg" v-if="false">debug</button>
+  <button @click="debugg" v-if="true">debug</button>
   <div id="navi">
     <div>
       <span>选择一个模板</span>
@@ -220,7 +220,7 @@ export default {
   created() {
     this.$watch("unitSelect", (newValue) => {
       this.unit = this.project.units[newValue]
-      this.interval = setInterval(() => {this.showTurret()}, 100)
+      this.interval = setInterval(() => {this.showTurret()}, 200)
       //this.showTurret()
     })
     /*
@@ -242,12 +242,12 @@ export default {
     })*/
   },
   watch: {
-    "this.unit.turret": {
+    /*"this.unit.turret": {
       handler() {
         this.showTurret()
       },
       deep: true
-    },
+    },*/
   },
   methods: {
     debugg() {
@@ -260,11 +260,13 @@ export default {
         let turImg = new Image()
         turImg.src = this.unit.turret[tur].image
         let c = document.getElementById("turretcanvas" + tur)
+        let ctx = c.getContext("2d")
         c.width = bgImg.width
         c.height = bgImg.height
-        let ctx = c.getContext("2d")
-        ctx.drawImage(bgImg,0,0)
-        ctx.drawImage(turImg, bgImg.width/2 - turImg.width/2 + this.unit.turret[tur].x, bgImg.height/2 - turImg.height/2 - this.unit.turret[tur].y)
+        ctx.drawImage(bgImg, 0, 0)
+        ctx.translate(bgImg.width/2 + this.unit.turret[tur].x, bgImg.height/2 - this.unit.turret[tur].y)
+        ctx.rotate(Date.now()/1000%360)
+        ctx.drawImage(turImg, - turImg.width/2, - turImg.height/2)
       }
     },
     newUnit() {
@@ -306,7 +308,8 @@ export default {
       saveAs(f)
     },
     saveUnit() {
-      this.project.units[this.unitSelect]=this.unit
+      if (this.unitSelect === null) return
+      this.project.units[this.unitSelect]=this.unit.clone()
     },
     deleteUnit() {
       let res = confirm("确认删除" + this.unitSelect + "吗？")
@@ -408,7 +411,7 @@ export default {
       }
     },
     newTurret() {
-      this.unit.turret.push(turretTmpl)
+      this.unit.turret.push(JSON.parse(JSON.stringify(turretTmpl)))
     },
     newProjectile() {
       this.unit.projectile.push(projectileTmpl)
