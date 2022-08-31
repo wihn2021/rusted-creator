@@ -24,7 +24,7 @@
     <button @click="deleteUnit">删除单位</button>
     <button @click="allModOutput">导出zip</button>
   </div>
-  <div id="uniteditor" v-if="unit">
+  <div id="uniteditor" v-if="unit" style="overflow: auto; height: 80%;width: auto">
     <template v-if="tmplSelect">
       <div v-for="ee in Object.keys(unit)" :key="ee.id">
         <button @click="template[ee].show=!template[ee].show" style="width: 50%;text-align: left"
@@ -33,48 +33,50 @@
           }}
         </button>
         <div v-if="template[ee].show">
-          <template v-if="ee==='turret'">
+          <template v-if="ee === 'turret' || ee === 'projectile'">
             <div v-for="t in rangeArray(unit[ee])" :key="t">
               <h2>{{ ee }}{{ t }}</h2>
               <button @click="unit[ee].splice(t,1)">删除{{ template[ee].sectionName }}</button>
-              <div :id="turret + t">
-                <canvas :id="'turretcanvas' + t"></canvas>
+              <div v-if="ee === 'turret'" :id="ee + t">
+                <canvas :id="ee + 'canvas' + t"></canvas>
               </div>
-              <div v-for="ff in Object.keys(unit.turret[t])" :key="ff">
-                <span :title="template.turret[ff].des">{{ template.turret[ff].trans }}</span>
-                <input type="checkbox" v-if="template[ee][ff].type==='bool'" v-model="unit.turret[t][ff]">
-                <input type="checkbox" v-if="template[ee][ff].type==='LogicBoolean'" v-model="unit.turret[t][ff]">
-                <input type="text" v-if="template[ee][ff].type==='string'" v-model="unit.turret[t][ff]">
-                <input type="text" v-if="template[ee][ff].type==='int'" v-model.number="unit.turret[t][ff]">
-                <input type="text" v-if="template[ee][ff].type==='float'" v-model.number="unit.turret[t][ff]" @change="showTurret">
-                <input type="text" v-if="template[ee][ff].type==='time'" v-model="unit.turret[t][ff]">
+              <div v-for="ff in Object.keys(unit[ee][t])" :key="ff">
+                <TransAndDes :trans="template[ee][ff].trans" :des="template[ee][ff].des" />
+                <input type="checkbox" v-if="template[ee][ff].type==='bool'" v-model="unit[ee][t][ff]">
+                <input type="checkbox" v-if="template[ee][ff].type==='LogicBoolean'" v-model="unit[ee][t][ff]">
+                <input type="text" v-if="template[ee][ff].type==='string'" v-model="unit[ee][t][ff]">
+                <input type="text" v-if="template[ee][ff].type==='int'" v-model.number="unit[ee][t][ff]">
+                <input type="text" v-if="template[ee][ff].type==='float'" v-model.number="unit[ee][t][ff]">
+                <input type="text" v-if="template[ee][ff].type==='time'" v-model="unit[ee][t][ff]">
                 <div class="image file" v-if="template[ee][ff].type==='file (image)'">
-                  <img :src="unit.turret[t][ff]" alt="">
+                  <img :src="unit[ee][t][ff]" alt="">
                   <input type="file" accept="image/png" @change="base64encrypt(ee, t, ff)"
                          :id="template[ee].sectionKey+ t + ff">
                 </div>
-                <select v-if="template[ee][ff].type==='enum'" v-model="unit.turret[t][ff]">
+                <select v-if="template[ee][ff].type==='enum'" v-model="unit[ee][t][ff]">
                   <option v-for="g in template[ee][ff].enum" :key="g">{{ g }}</option>
                 </select>
-                <select v-if="template[ee][ff].type==='projectile'" v-model="unit.turret[t][ff]">
+                <select v-if="template[ee][ff].type==='projectile'" v-model="unit[ee][t][ff]">
                   <option v-for="g in rangeArray(unit.projectile)" :key="'pro' + g">{{ g }}</option>
                 </select>
               </div>
+              <div class="newProp">
+                <input type="text"
+                       :id="ee + t + 'addItem'"
+                       @change="textTriggeredHint(ee, '#' + ee + t + 'addItem')"
+                @focus="textTriggeredHint(ee, '#' + ee + t + 'addItem')">
+                <button @click="newItem(ee, t, '#' + ee + t + 'addItem')">+</button>
+              </div>
             </div>
-            <button @click="newTurret">新建炮塔</button>
+            <button @click="newComponentFunctions[ee]">新建{{ template[ee].sectionName }}</button>
           </template>
+          <!--
           <template v-else-if="ee==='projectile'&&unit[ee]">
             <div v-for="t in rangeArray(unit.projectile)" :key="t">
               <h2>projectile{{ t }}</h2>
               <button @click="unit.projectile.splice(t,1)">删除炮弹</button>
-              <!---
-              <div style="position: static; text-align: center; display: block">
-                <div style="text-align: center;position: center"><img :src="this.unit.graphics.image" style="margin: 0 auto"></div>
-                <div style="text-align: center;position: center"><img :src="t.image" :style="turretStyle"></div>
-              </div>
-              --->
               <div v-for="ff in Object.keys(unit.projectile[t])" :key="ff">
-                <span :title="template.projectile[ff].des">{{ template.projectile[ff].trans }}</span>
+                <TransAndDes :trans="template.projectile[ff].trans" :des="template.projectile[ff].des" />
                 <input type="checkbox" v-if="template[ee][ff].type==='bool'" v-model="unit.projectile[t][ff]">
                 <input type="checkbox" v-if="template[ee][ff].type==='LogicBoolean'" v-model="unit.projectile[t][ff]">
                 <input type="text" v-if="template[ee][ff].type==='string'" v-model="unit.projectile[t][ff]">
@@ -100,14 +102,8 @@
             <div v-for="t in rangeArray(unit[ee])" :key="t">
               <h2>{{ ee }}{{ t }}</h2>
               <button @click="unit[ee].splice(t,1)">删除腿脚</button>
-              <!---
-              <div style="position: static; text-align: center; display: block">
-                <div style="text-align: center;position: center"><img :src="this.unit.graphics.image" style="margin: 0 auto"></div>
-                <div style="text-align: center;position: center"><img :src="t.image" :style="turretStyle"></div>
-              </div>
-              --->
               <div v-for="ff in Object.keys(unit[ee][t])" :key="ff">
-                <span :title="template[ee][ff].des">{{ template[ee][ff].trans }}</span>
+                <TransAndDes :trans="template[ee][ff].trans" :des="template[ee][ff].des" />
                 <input type="checkbox" v-if="template[ee][ff].type==='bool'" v-model="unit[ee][t][ff]">
                 <input type="checkbox" v-if="template[ee][ff].type==='LogicBoolean'" v-model="unit[ee][t][ff]">
                 <input type="text" v-if="template[ee][ff].type==='string'" v-model="unit[ee][t][ff]">
@@ -130,14 +126,8 @@
             <div v-for="t in rangeArray(unit[ee])" :key="t">
               <h2>{{ ee }}{{ t }}</h2>
               <button @click="unit[ee].splice(t,1)">删除效果</button>
-              <!---
-              <div style="position: static; text-align: center; display: block">
-                <div style="text-align: center;position: center"><img :src="this.unit.graphics.image" style="margin: 0 auto"></div>
-                <div style="text-align: center;position: center"><img :src="t.image" :style="turretStyle"></div>
-              </div>
-              --->
               <div v-for="ff in Object.keys(unit[ee][t])" :key="ff">
-                <span :title="template[ee][ff].des">{{ template[ee][ff].trans }}</span>
+                <TransAndDes :trans="template[ee][ff].trans" :des="template[ee][ff].des" />
                 <input type="checkbox" v-if="template[ee][ff].type==='bool'" v-model="unit[ee][t][ff]">
                 <input type="checkbox" v-if="template[ee][ff].type==='LogicBoolean'" v-model="unit[ee][t][ff]">
                 <input type="text" v-if="template[ee][ff].type==='string'" v-model="unit[ee][t][ff]">
@@ -156,12 +146,11 @@
             </div>
             <button @click="void(0)">新建效果</button>
           </template>
+    --->
           <template v-else>
             <template v-for="ff in Object.keys(unit[ee])" :key="ff">
               <div v-if="true || template[ee][ff].isNecessary || template[ee][ff].isShow" class="unitdata">
-              <span :title="template[ee][ff].des" @dblclick="template[ee][ff].isShow=false">{{
-                  template[ee][ff].trans
-                }}: </span>
+                <TransAndDes :trans="template[ee][ff].trans" :des="template[ee][ff].des" />
                 <input type="checkbox" v-if="template[ee][ff].type==='bool'" v-model="unit[ee][ff]">
                 <input type="checkbox" v-if="template[ee][ff].type==='LogicBoolean'" v-model="unit[ee][ff]">
                 <input type="text" v-if="template[ee][ff].type==='string'" v-model="unit[ee][ff]">
@@ -181,11 +170,19 @@
                 </select>
               </div>
             </template>
+            <div class="newProp">
+              <input type="text"
+                     :id="ee + 'addItem'"
+                     @change="textTriggeredHint(ee, '#' + ee + 'addItem')"
+                     @focus="textTriggeredHint(ee, '#' + ee + 'addItem')">
+              <button @click="newItem(ee, null, '#' + ee + 'addItem')">+</button>
+            </div>
           </template>
         </div>
       </div>
     </template>
   </div>
+  <span id="hint" style="display: inline-block;position: fixed;bottom: 0;right: 0;width: 20%;overflow: auto;background-color: #EFF1FE">Hint</span>
 </template>
 
 <script>
@@ -195,9 +192,11 @@ import {saveAs} from "file-saver";
 import {turretTmpl} from "@/components/TurretTmpl";
 import {projectileTmpl} from "@/components/ProjectileTmpl";
 import {legTmpl} from "@/components/LegTmpl";
+import TransAndDes from "@/components/TransAndDes";
 
 export default {
   name: "UnitEditor",
+  components: {TransAndDes},
   data() {
     return {
       templates: null,
@@ -206,7 +205,13 @@ export default {
       unitSelect: null,
       unit: {},
       template: null,
-      interval: null
+      interval: null,
+      showHint: false,
+      newComponentFunctions: {
+        turret: this.newTurret,
+        projectile: this.newProjectile,
+        leg: this.newLeg
+      }
     }
   },
   computed: {
@@ -250,6 +255,20 @@ export default {
     },*/
   },
   methods: {
+    textTriggeredHint(pos, patPos) {
+      console.log("patPos="+patPos)
+      let pat = document.querySelector(patPos).value
+      let con = ""
+      const re = new RegExp(pat + "*", "i")
+      for (let entry in this.template[pos]) {
+        console.log("pos="+pos)
+        console.log("ent="+entry)
+        if (re.test(entry)) {
+          con += "<p onclick='document.querySelector("+patPos+").value="+entry+"'>" + entry + " " + this.template[pos][entry].trans + "</p>"
+        }
+      }
+      document.querySelector("#hint").innerHTML = con
+    },
     debugg() {
       console.log(this.$data)
     },
@@ -290,6 +309,27 @@ export default {
             }
           }*/
         })
+      }
+    },
+    newItem(pos1, pos2, item) {
+      console.log("pos1=" + pos1)
+      console.log("pos2=" + pos2)
+      console.log("item=" + item)
+      let t = document.querySelector(item).value
+      console.log("t="+t)
+      let v
+      try {
+        v = this.template[pos1][t].value
+      }
+      catch (e) {
+        console.log("not found matching default value")
+        return
+      }
+      if (pos2 === null) {
+        this.unit[pos1][t] = v
+      }
+      else {
+        this.unit[pos1][pos2][t] = v
       }
     },
     clickLoadProject() {
@@ -414,10 +454,10 @@ export default {
       this.unit.turret.push(JSON.parse(JSON.stringify(turretTmpl)))
     },
     newProjectile() {
-      this.unit.projectile.push(projectileTmpl)
+      this.unit.projectile.push(JSON.parse(JSON.stringify(projectileTmpl)))
     },
     newLeg() {
-      this.unit.leg.push(legTmpl)
+      this.unit.leg.push(JSON.parse(JSON.stringify(legTmpl)))
     },
     rangeArray(l) {
       let res = []
