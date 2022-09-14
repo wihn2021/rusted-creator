@@ -295,7 +295,7 @@ export default {
       }
       let name = prompt("输入单位名称（不要与已有的重复！）")
       if (name) {
-        fetch("/templates/" + this.tmplSelect.en + ".json", {
+        fetch("./templates/" + this.tmplSelect.en + ".json", {
           method: "GET",
         }).then(resp => resp.json()).then(res => {
           this.project.units[name] = res
@@ -468,10 +468,10 @@ export default {
     }
   },
   mounted() {
-    fetch("/templates/templates.txt", {
+    fetch("./templates/templates.txt", {
       method: "GET",
     }).then(resp => resp.json()).then(res => this.templates = res)
-    fetch("/templates/tmpl.json", {
+    fetch("./templates/tmpl.json", {
       method: "GET",
     }).then(resp => resp.json()).then(res => {
       this.template = res
